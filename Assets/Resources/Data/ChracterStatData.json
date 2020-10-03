@@ -1,0 +1,30 @@
+{
+  "stats": [
+    {
+      "id": "Knight",
+      "level": "1",
+      "totalExp;": "1000",
+      "maxHp": "100",
+      "attack": "20",
+      "defense": "5",
+      "attackSpeed": "5",
+      "moveSpeed": "15",
+      "attackRange": "3",
+      "viewRadius": "8",
+      "viewAngle": "360"
+    },
+    {
+      "id": "KnightLv2",
+      "level": "1",
+      "totalExp;": "1000",
+      "maxHp": "100",
+      "attack": "5",
+      "defense": "5",
+      "attackSpeed": "5",
+      "moveSpeed": "5",
+      "attackRange": "3",
+      "viewRadius": "8",
+      "viewAngle": "360"
+    }
+  ]
+}

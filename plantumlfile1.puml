@@ -1,0 +1,8 @@
+﻿@startuml
+
+class Car
+{
+	-Weapon weapon
+}
+
+@enduml

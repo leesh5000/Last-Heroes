@@ -1,0 +1,28 @@
+{
+  "stats": [
+    {
+      "id": "Slime",
+      "level": "1",
+      "maxHp": "100",
+      "attack": "5",
+      "defense": "5",
+      "attackSpeed": "5",
+      "moveSpeed": "7",
+      "attackRange": "3",
+      "viewRadius": "8",
+      "viewAngle": "360"
+    },
+    {
+      "id": "SlimeLv2",
+      "level": "1",
+      "maxHp": "100",
+      "attack": "5",
+      "defense": "5",
+      "attackSpeed": "5",
+      "moveSpeed": "5",
+      "attackRange": "3",
+      "viewRadius": "8",
+      "viewAngle": "360"
+    }
+  ]
+}
