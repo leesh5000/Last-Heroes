@@ -12,21 +12,12 @@ public class UI_Minimap : UI_SceneBase
         MinimapMinusButton,
     }
 
-    GameObject uI_Worldmap;
-
-    Camera minimapCamera;
-    Camera worldmapCamera;
-
     int minimapCameraZoomMax = 40;
     int minimapCameraZoomMin = 100;
-
 
     public override void Init()
     {
         base.Init();
-
-        minimapCamera = GameObject.Find("MinimapCamera").GetComponent<Camera>();
-        worldmapCamera = GameObject.Find("WorldmapCamera").GetComponent<Camera>();
 
         Bind<GameObject>(typeof(GameObjects));
 
@@ -41,33 +32,33 @@ public class UI_Minimap : UI_SceneBase
 
     void MinimapImageClick(PointerEventData evnetData)
     {
-        if (!Util.IsValid(uI_Worldmap))
+        if (!Util.IsValid(Managers.Game.Ui_Worldmap))
         {
-            if (worldmapCamera == null)
+            if (Managers.Game.WorldmapCamera == null)
             {
-                worldmapCamera = GameObject.Find("WorldmapCamera").GetComponent<Camera>();
+                return;
             }
 
-            uI_Worldmap = Managers.UI.OpenPopupUI<UI_Worldmap>().gameObject;
-            worldmapCamera.gameObject.SetActive(true);
+            Managers.Game.Ui_Worldmap = Managers.UI.OpenPopupUI<UI_Worldmap>().gameObject;
+            Managers.Game.WorldmapCamera.SetActive(true);
         }
     }
 
     void MinimapPlusButtonClick(PointerEventData evnetData)
     {
-        if (minimapCamera == null)
-            minimapCamera = GameObject.Find("MinimapCamera").GetComponent<Camera>();
+        if (Managers.Game.MinimapCamera == null)
+            Managers.Game.MinimapCamera = GameObject.Find("MinimapCamera");
 
-        if (minimapCamera.orthographicSize - 20 >= minimapCameraZoomMax)
-            minimapCamera.orthographicSize -= 20;
+        if (Managers.Game.MinimapCamera.GetOrAddComponent<Camera>().orthographicSize - 20 >= minimapCameraZoomMax)
+            Managers.Game.MinimapCamera.GetOrAddComponent<Camera>().orthographicSize -= 20;
     }
 
     void MinimapMinusButtonClick(PointerEventData evnetData)
     {
-        if (minimapCamera == null)
-            minimapCamera = GameObject.Find("MinimapCamera").GetComponent<Camera>();
+        if (Managers.Game.MinimapCamera == null)
+            Managers.Game.MinimapCamera = GameObject.Find("MinimapCamera");
 
-        if (minimapCamera.orthographicSize + 20 <= minimapCameraZoomMin)
-            minimapCamera.orthographicSize += 20;
+        if (Managers.Game.MinimapCamera.GetOrAddComponent<Camera>().orthographicSize + 20 <= minimapCameraZoomMin)
+            Managers.Game.MinimapCamera.GetOrAddComponent<Camera>().orthographicSize += 20;
     }
 }

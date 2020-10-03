@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class UI_Worldmap : UI_PopupBase
 {
-    Camera worldmapCamera;
-
     enum GameObjects
     {
         ExitButton,
@@ -16,8 +14,6 @@ public class UI_Worldmap : UI_PopupBase
     public override void Init()
     {
         base.Init();
-
-        worldmapCamera = GameObject.Find("WorldmapCamera").GetComponent<Camera>();
 
         Bind<GameObject>(typeof(GameObjects));
         GameObject exitButton = Get<GameObject>((int)GameObjects.ExitButton);
@@ -28,11 +24,11 @@ public class UI_Worldmap : UI_PopupBase
     {
         Managers.UI.ClosePopupUI();
 
-        if (worldmapCamera == null)
+        if (Managers.Game.WorldmapCamera == null)
         {
-            worldmapCamera = GameObject.Find("WorldmapCamera").GetComponent<Camera>();
+            return;
         }
 
-        worldmapCamera.gameObject.SetActive(false);
+        Managers.Game.WorldmapCamera.SetActive(false);
     }
 }

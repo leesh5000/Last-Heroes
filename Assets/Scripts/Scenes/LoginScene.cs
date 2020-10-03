@@ -11,6 +11,11 @@ public class LoginScene : BaseScene
 
         SceneType = Define.Scene.Login;
 
+        if (Managers.Game.Ui_LoginScene == null)
+        {
+            Managers.Game.Ui_LoginScene = Managers.UI.OpenSceneUI<UI_LoginScene>().gameObject;
+        }
+
         //Managers.UI.OpenSceneUI<UI_LoginScene>();
     }
 

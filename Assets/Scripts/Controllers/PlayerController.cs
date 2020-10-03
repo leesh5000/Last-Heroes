@@ -135,36 +135,6 @@ public class PlayerController : CreatureController
 
             return;
         }
-
-        // TODO : 위에꺼 안되면 이걸로 하기
-        //if (joystick.JoyDir != Vector3.zero && ui_Right.isPressed == false)
-        //{
-        //    float vAxis = joystick.JoyDir.y;
-        //    float hAxis = joystick.JoyDir.x;
-        //    input = CameraForward * vAxis + CameraRight * hAxis;
-
-        //    if (State != Define.State.Moving) State = Define.State.Moving;
-        //}
-
-        //else if (ui_Right.isPressed == true || (joystick.JoyDir == Vector3.zero && _fov.visibleTargets.Count != 0))
-        //{
-        //    if (_lockTarget == null)
-        //    {
-        //        if (_fov.visibleTargets.Count != 0)
-        //            _lockTarget = _fov.visibleTargets.Dequeue();
-        //    }
-
-        //    if (State != Define.State.Attack)
-        //    {
-        //        State = Define.State.Attack;
-        //    }
-        //}
-
-        //else
-        //{
-        //    //if (State != Define.State.Wait && State != Define.State.Idle) State = Define.State.Wait;
-        //    if (State != Define.State.Idle) State = Define.State.Idle;
-        //}
     }
 
 

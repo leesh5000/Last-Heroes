@@ -5,17 +5,20 @@ using UnityEngine;
 
 public class GameManager
 {
-    //Dictionary<int, GameObject> _environments = new Dictionary<int, GameObject>();
-    //Dictionary<int, GameObject> _montsers = new Dictionary<int, GameObject>();
+    public GameObject Ui_LoginScene { get; set; }
 
-    /* HashSet */
-    //    - 특징
-    //(1) 입력된 순서로 저장되지 않습니다.
-    //(2) element의 중복을 허용하지 않습니다.
-    //(3) null element를 허용합니다.
-    //(4) 동기화처리가 되지 않습니다.
-    //동기화 처리를 하기 위해서는 아래와 같이 객체를 생성해야 합니다.
+    public GameObject Ui_GameScene { get; set; }
+    public GameObject Ui_Worldmap { get; set; }
 
+    public GameObject Statue { get; set; }
+    public GameObject Player { get; set; }
+
+    public GameObject MainCamera { get; set; }
+    public GameObject MinimapCamera { get; set; }
+    public GameObject WorldmapCamera { get; set; }
+
+    public GameObject SpawningPool { get; set; }
+    
     GameObject _player;
 
     public Action<int> OnSpawnEvent;
