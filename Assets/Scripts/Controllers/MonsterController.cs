@@ -87,7 +87,7 @@ public class MonsterController : CreatureController
         if (_lockTarget != null)
         {
             // 체력
-            Stat targetStat = _lockTarget.GetComponent<Stat>();
+            CreatureStat targetStat = _lockTarget.GetComponent<CreatureStat>();
             targetStat.OnAttacked(_stat);
 
             if (targetStat.Hp > 0)

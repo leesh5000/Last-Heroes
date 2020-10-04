@@ -10,7 +10,7 @@ public class UI_HPBar : UI_Base
         HPBar,
     }
 
-    Stat _stat;
+    CreatureStat _stat;
 
     public override void Init()
     {
@@ -24,7 +24,7 @@ public class UI_HPBar : UI_Base
         transform.position = parent.position + Vector3.up * (parent.gameObject.GetComponentInChildren<Collider>().bounds.size.y);
         transform.rotation = Camera.main.transform.rotation;
 
-        _stat = transform.parent.GetComponent<Stat>();
+        _stat = transform.parent.GetComponent<CreatureStat>();
         if (_stat != null)
         {
             float ratio = _stat.Hp / (float)_stat.MaxHp;

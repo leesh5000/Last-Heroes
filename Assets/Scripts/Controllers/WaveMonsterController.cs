@@ -140,7 +140,7 @@ public class WaveMonsterController : CreatureController
         if (_lockTarget != null)
         {
             // 데미지 처리는 공격을 받는 대상이 하는게 훨씬 좋다. (각종 버프같은 것들 때문에)
-            Stat targetStat = _lockTarget.GetComponent<Stat>();
+            CreatureStat targetStat = _lockTarget.GetComponent<CreatureStat>();
 
             if (targetStat != null)
                 targetStat.OnAttacked(_stat);

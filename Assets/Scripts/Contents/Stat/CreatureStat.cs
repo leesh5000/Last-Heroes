@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Stat : MonoBehaviour
+public abstract class CreatureStat : MonoBehaviour
 {
     [SerializeField]
     protected string _id;
@@ -59,6 +59,6 @@ public abstract class Stat : MonoBehaviour
     public abstract void Init();
 
     public virtual void SetStat(Define.WorldObject type, string Id) { }
-    public virtual void OnAttacked(Stat attackerStat) { }
-    public virtual void OnDead(Stat attackerStat) { }
+    public virtual void OnAttacked(CreatureStat attackerStat) { }
+    public virtual void OnDead(CreatureStat attackerStat) { }
 }

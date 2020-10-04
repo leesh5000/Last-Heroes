@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterStat : Stat
+public class MonsterStat : CreatureStat
 {
     public override void Init()
     {
@@ -30,7 +30,7 @@ public class MonsterStat : Stat
         ViewAngle = stat.viewAngle;
     }
 
-    public override void OnAttacked(Stat attackerStat)
+    public override void OnAttacked(CreatureStat attackerStat)
     {
         int damage = Mathf.Max(0, attackerStat.Attack - Defense);
         Hp -= damage;
@@ -42,7 +42,7 @@ public class MonsterStat : Stat
         }
     }
 
-    public override void OnDead(Stat attackerStat)
+    public override void OnDead(CreatureStat attackerStat)
     {
         ChracterStat characterStat = attackerStat as ChracterStat;
         if (characterStat != null)

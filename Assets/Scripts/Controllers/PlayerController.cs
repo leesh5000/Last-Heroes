@@ -68,7 +68,7 @@ public class PlayerController : CreatureController
 
     protected override void UpdateAttack()
     {
-        if (_lockTarget != null && _lockTarget.GetComponent<Stat>().Hp <= 0)
+        if (_lockTarget != null && _lockTarget.GetComponent<CreatureStat>().Hp <= 0)
         {
             _lockTarget = null;
             State = Define.State.Idle;
@@ -86,7 +86,7 @@ public class PlayerController : CreatureController
     {
         if (_lockTarget != null)
         {
-            Stat targetStat = _lockTarget.gameObject.GetComponent<Stat>();
+            CreatureStat targetStat = _lockTarget.gameObject.GetComponent<CreatureStat>();
             targetStat.OnAttacked(Stat);
         }
     }

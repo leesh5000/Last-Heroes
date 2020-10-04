@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChracterStat : Stat
+public class ChracterStat : CreatureStat
 {
     [SerializeField]
     float _exp;
@@ -68,7 +68,7 @@ public class ChracterStat : Stat
         ViewAngle = stat.viewAngle;
     }
 
-    public override void OnAttacked(Stat attackerStat)
+    public override void OnAttacked(CreatureStat attackerStat)
     {
         int damage = Mathf.Max(0, attackerStat.Attack - Defense);
         Hp -= damage;
@@ -80,7 +80,7 @@ public class ChracterStat : Stat
         }
     }
 
-    public override void OnDead(Stat attackerStat)
+    public override void OnDead(CreatureStat attackerStat)
     {
         Debug.Log("Player Dead!");
     }
