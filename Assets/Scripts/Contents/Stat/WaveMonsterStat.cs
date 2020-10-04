@@ -44,10 +44,10 @@ public class WaveMonsterStat : CreatureStat
 
     public override void OnDead(CreatureStat attackerStat)
     {
-        ChracterStat characterStat = attackerStat as ChracterStat;
-        if (characterStat != null)
+        PlayerStat playerStat = attackerStat as PlayerStat;
+        if (playerStat != null)
         {
-            characterStat.Exp += 5;
+            playerStat.Exp += 5;
             // 여기서 플레이어 스텟에 접근하지말고, 플레이어 스텟에서 레벨업 체크 로직을 수행할 것
         }
 

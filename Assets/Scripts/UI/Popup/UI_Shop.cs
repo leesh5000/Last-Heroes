@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Shop : MonoBehaviour
+public class UI_Shop : UI_PopupBase
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Init()
     {
-        
-    }
+        base.Init();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
     }
 }

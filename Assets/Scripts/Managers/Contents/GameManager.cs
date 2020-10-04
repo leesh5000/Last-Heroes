@@ -8,7 +8,6 @@ public class GameManager
     public GameObject Ui_LoginScene { get; set; }
 
     public GameObject Ui_GameScene { get; set; }
-    public GameObject Ui_Worldmap { get; set; }
 
     public GameObject Statue { get; set; }
     public GameObject Player { get; set; }

@@ -4,24 +4,43 @@ using UnityEngine;
 
 public class Shop : Building
 {
+    List<Collider> colliders = new List<Collider>();
+
     public override void Init()
     {
 
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        colliders.Add(other);
+
+        foreach (Collider collider in colliders)
         {
-            Managers.UI.OpenPopupUI<UI_Dialog>();
+            if (collider.gameObject.CompareTag("Player") && !Util.IsValid(Managers.UI.UI_ShopDialog))
+            {
+                if (Util.IsValid(Managers.UI.UI_Worldmap))
+                {
+                    Managers.UI.UI_Worldmap.GetComponent<UI_Worldmap>().ClosePopupUI();
+                }
+
+                Managers.UI.UI_ShopDialog = Managers.UI.OpenPopupUI<UI_ShopDialog>().gameObject;
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        foreach (Collider collider in colliders)
         {
-            Managers.UI.ClosePopupUI();
+            if (collider.gameObject.CompareTag("Player"))
+            {
+                colliders.Clear();
+                break;
+            }
         }
+
+        if (Util.IsValid(Managers.UI.UI_ShopDialog))
+            Managers.UI.CloseAllPopupUI();
     }
 }

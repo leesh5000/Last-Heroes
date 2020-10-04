@@ -5,8 +5,7 @@ using UnityEngine;
 public class WorldmapCameraController : MonoBehaviour
 {
     [SerializeField]
-    LayerMask _cullingMask = ~(1 << (int)Define.Layer.Monster | 1 << (int)Define.Layer.Player | 1 << (int)Define.Layer.Shop
-            | 1 << (int)Define.Layer.Statue | 1 << (int)Define.Layer.Tent);
+    LayerMask _cullingMask = ~(1 << (int)Define.Layer.Monster | 1 << (int)Define.Layer.WaveMonster | 1 << (int)Define.Layer.Player | 1 << (int)Define.Layer.Building);
 
     void Start()
     {

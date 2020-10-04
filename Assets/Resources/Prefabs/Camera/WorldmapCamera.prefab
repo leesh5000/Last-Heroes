@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3350263850037969586}
   - component: {fileID: 3350263850037969587}
-  - component: {fileID: 3230432216386362291}
+  - component: {fileID: -2259584606962523015}
   m_Layer: 0
   m_Name: WorldmapCamera
   m_TagString: Untagged
@@ -59,11 +59,11 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 120
+  orthographic size: 100
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 21824de262f6a48c28a2def70fd931c4, type: 2}
   m_TargetDisplay: 0
@@ -75,7 +75,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &3230432216386362291
+--- !u!114 &-2259584606962523015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,4 +89,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cullingMask:
     serializedVersion: 2
-    m_Bits: 4294935551
+    m_Bits: 4294961407

@@ -13,14 +13,11 @@ public class PlayerController : CreatureController
     UI_Joystick ui_Joystick;
     Vector3 input;
 
-    public ChracterStat Stat { get; set; }
+    public PlayerStat Stat { get; set; }
+    public PlayerInventory Inventory { get; set; }
 
     public override void Init()
     {
-        WorldObjectType = Define.WorldObject.Chracter;
-        nma = Util.GetOrAddComponent<NavMeshAgent>(gameObject);
-        nma.avoidancePriority = 40;
-
         #region 이벤트 등록
         //Managers.Input.KeyboardAction -= OnKeyboardEvent;
         //Managers.Input.KeyboardAction += OnKeyboardEvent;
@@ -30,6 +27,13 @@ public class PlayerController : CreatureController
         Managers.Input.JoystickAcition += OnJoystickEvent;
         #endregion
 
+        WorldObjectType = Define.WorldObject.Chracter;
+
+        gameObject.layer = (int)Define.Layer.Player;
+
+        nma = Util.GetOrAddComponent<NavMeshAgent>(gameObject);
+        nma.avoidancePriority = 40;
+
         // 먼저 조이스틱이 없다면 만들어주기
         // joystick = GameObject.FindObjectOfType<UI_Joystick>();
         if (ui_Joystick == null)
@@ -38,14 +42,17 @@ public class PlayerController : CreatureController
             ui_Joystick = Util.FindChildren<UI_Joystick>(ui_GameScene);
         }
 
-        Stat = gameObject.GetOrAddComponent<ChracterStat>();
-        Stat.Id = gameObject.name;
+        // 캐릭터 스텟 데이터 가져오기
+        Stat = gameObject.GetOrAddComponent<PlayerStat>();
+
+        // 캐릭터 인벤토리 데이터 가져오기
+        Inventory = gameObject.GetOrAddComponent<PlayerInventory>();
 
         _fov = gameObject.GetOrAddComponent<FieldOfView>();
         _fov.viewRadius = Stat.ViewRadius;
         _fov.viewAngle = Stat.ViewAngle;
 
-        _fov.targetMask = (1 <<(int)Define.Layer.Monster);
+        _fov.targetMask = (1 <<(int)Define.Layer.WaveMonster | 1<<(int)Define.Layer.Monster);
         gameObject.tag = "Player";
     }
 

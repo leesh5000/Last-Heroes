@@ -8,8 +8,7 @@ public class MainCameraController : MonoBehaviour
     [SerializeField]
     Vector3 _offset = new Vector3(-9.0f, 9.0f, -9.0f);
 
-    LayerMask _cameraMask = (1 << (int)Define.Layer.Monster | 1 << (int)Define.Layer.Shop
-        | 1 << (int)Define.Layer.Statue | 1 << (int)Define.Layer.Tent | 1 << (int)Define.Layer.Wall);
+    LayerMask _cameraMask = (1 << (int)Define.Layer.Monster | 1 << (int)Define.Layer.Building | 1<<(int)Define.Layer.Wall);
 
     List<MeshRenderer> fadeInList = new List<MeshRenderer>();
 

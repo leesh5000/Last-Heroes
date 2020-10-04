@@ -65,20 +65,19 @@ public class Define
     public enum Layer
     {
         Default = 0,
-        Obstacle = 8,
 
-        Monster = 10,
-        Player = 11,
-        Shop = 12,
-        Tent = 13,
-        Statue = 14,
-        Wall = 15,
-            
+        WaveMonster = 8,
+        Monster = 9,
+        Player = 10,
+        Ally = 11,
+        Building = 12,
+        Wall = 13,
+
+        MinimapWaveMonster = 16,
         MinimapMonster = 17,
         MinimapPlayer = 18,
-        MinimapShop = 19,
-        MinimapTent = 20,
-        MinimapStatue = 21,
+        MinimapAlly = 19,
+        MinimapBuilding = 20,
     }
 
     public enum WorldObject

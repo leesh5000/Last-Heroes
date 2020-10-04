@@ -12,10 +12,13 @@ public class WaveMonsterController : CreatureController
     {
         WorldObjectType = Define.WorldObject.WaveMonster;
 
+        gameObject.layer = (int)Define.Layer.WaveMonster;
+
+        // NavMeshAgent
         nma = Util.GetOrAddComponent<NavMeshAgent>(gameObject);
 
+        // 웨이브 몬스터 스텟 정보 가져오기
         _stat = gameObject.GetOrAddComponent<WaveMonsterStat>();
-        _stat.Id = gameObject.name;
 
         _fov = gameObject.GetOrAddComponent<FieldOfView>();
         _fov.targetMask = (1 << (int)Define.Layer.Player);

@@ -337,7 +337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4471907625011832490}
   - component: {fileID: 4471907625011832493}
-  m_Layer: 19
+  m_Layer: 20
   m_Name: MinimapShop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 4471907625829919735}
   - component: {fileID: 7199059759401738168}
   - component: {fileID: 6382697986722985905}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +557,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4471907625829919732}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -570,7 +570,7 @@ Transform:
   - {fileID: 4471907625011832490}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!114 &7199059759401738168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,8 +594,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.042582, y: 7.3785944, z: 7.5819674}
-  m_Center: {x: -1.5438046, y: 3.7809348, z: 0.03697586}
+  m_Size: {x: 9.888787, y: 7.3785944, z: 10.670417}
+  m_Center: {x: -1.1207012, y: 3.7809348, z: -0.07172778}
 --- !u!1 &4471907625865378308
 GameObject:
   m_ObjectHideFlags: 0

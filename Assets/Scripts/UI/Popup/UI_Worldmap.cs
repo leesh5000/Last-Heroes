@@ -8,7 +8,7 @@ public class UI_Worldmap : UI_PopupBase
 {
     enum GameObjects
     {
-        ExitButton,
+        WorldmapExitButton,
     }
 
     public override void Init()
@@ -16,17 +16,20 @@ public class UI_Worldmap : UI_PopupBase
         base.Init();
 
         Bind<GameObject>(typeof(GameObjects));
-        GameObject exitButton = Get<GameObject>((int)GameObjects.ExitButton);
-        BindUIEvent(exitButton, ExitButtonClick, Define.UIEvent.OnPointerClick);
+        GameObject worldmapExitButton = Get<GameObject>((int)GameObjects.WorldmapExitButton);
+        BindUIEvent(worldmapExitButton, WorldmapExitButtonClick, Define.UIEvent.OnPointerClick);
     }
 
-    void ExitButtonClick(PointerEventData data)
+    void WorldmapExitButtonClick(PointerEventData data)
     {
-        Managers.UI.ClosePopupUI();
-
         if (Managers.Game.WorldmapCamera == null)
         {
             return;
+        }
+
+        if (Managers.UI.UI_Worldmap != null)
+        {
+            Managers.UI.UI_Worldmap.GetComponent<UI_Worldmap>().ClosePopupUI();
         }
 
         Managers.Game.WorldmapCamera.SetActive(false);

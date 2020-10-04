@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1552585377669757169}
   - component: {fileID: 1552585377669757174}
-  - component: {fileID: -2502268188360027329}
+  - component: {fileID: 1588107144560404800}
   m_Layer: 0
   m_Name: MinimapCamera
   m_TagString: Untagged
@@ -63,7 +63,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 0ccd47b6a00fb402284c280b19340cf1, type: 2}
   m_TargetDisplay: 0
@@ -75,7 +75,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &-2502268188360027329
+--- !u!114 &1588107144560404800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,7 +88,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _offset: {x: 0, y: 100, z: 0}
-  _player: {fileID: 0}
-  _cullingMask:
-    serializedVersion: 2
-    m_Bits: 4294935551
+  _cullingMask: -5889

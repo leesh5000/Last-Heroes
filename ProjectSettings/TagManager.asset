@@ -13,20 +13,20 @@ TagManager:
   - UI
   - 
   - 
-  - Obstacle
-  - 
+  - WaveMonster
   - Monster
   - Player
-  - Shop
-  - Tent
-  - Statue
+  - Ally
+  - Building
   - Wall
   - 
+  - 
+  - MinimapWaveMonster
   - MinimapMonster
   - MinimapPlayer
-  - MinimapShop
-  - MinimapTent
-  - MinimapStatue
+  - MinimapAlly
+  - MinimapBuilding
+  - 
   - 
   - 
   - 

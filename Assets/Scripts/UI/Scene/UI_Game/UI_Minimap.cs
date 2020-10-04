@@ -32,15 +32,21 @@ public class UI_Minimap : UI_SceneBase
 
     void MinimapImageClick(PointerEventData evnetData)
     {
-        if (!Util.IsValid(Managers.Game.Ui_Worldmap))
+        if (!Util.IsValid(Managers.UI.UI_Worldmap))
         {
             if (Managers.Game.WorldmapCamera == null)
             {
                 return;
             }
 
-            Managers.Game.Ui_Worldmap = Managers.UI.OpenPopupUI<UI_Worldmap>().gameObject;
+            Managers.UI.UI_Worldmap = Managers.UI.OpenPopupUI<UI_Worldmap>().gameObject;
             Managers.Game.WorldmapCamera.SetActive(true);
+        }
+
+        else
+        {
+            Managers.UI.UI_Worldmap.GetComponent<UI_Worldmap>().ClosePopupUI();
+            Managers.Game.WorldmapCamera.SetActive(false);
         }
     }
 
