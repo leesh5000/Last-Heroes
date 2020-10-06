@@ -26,7 +26,7 @@ public class SpawningPool : MonoBehaviour
             for (int j = (int)_spawnArea.transform.position.z; j < (int)_spawnArea.bounds.max.z; j++)
             {
                 Vector3 pos = new Vector3(i, 0, j);
-                Managers.Game.Spawn(Define.WorldObject.WaveMonster, "Prefabs/Monster/Slime", pos);
+                Managers.Game.Spawn(Define.WorldObject.WaveMonster, "Prefabs/Monster/Slime", pos, parent);
                 _monsterCount++;
 
                 if (_monsterCount >= 3)

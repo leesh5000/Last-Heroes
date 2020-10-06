@@ -21,7 +21,7 @@ public class UI_ShopDialog : UI_PopupBase
 
     void ShopOpenButtonClick(PointerEventData eventData)
     {
-        if (Util.IsValid(Managers.UI.UI_Shop))
+        if (!Util.IsValid(Managers.UI.UI_Shop))
         {
             Managers.UI.UI_Shop = Managers.UI.OpenPopupUI<UI_Shop>().gameObject;
         }

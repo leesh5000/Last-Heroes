@@ -97,4 +97,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _offset: {x: -9, y: 9, z: -9}
-  _player: {fileID: 0}

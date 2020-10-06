@@ -38,7 +38,7 @@ public class UI_Joystick : UI_SceneBase
         BindUIEvent(gameObject, OnEndDrag, Define.UIEvent.OnEndDrag);
 
         // 조이스틱 배경의 절반
-        Radius = LeftBackground.GetComponent<RectTransform>().sizeDelta.y * 0.5f;
+        Radius = LeftBackground.GetComponent<RectTransform>().sizeDelta.y * 0.4f;
         InitPos = LeftBackground.transform.position;
     }
 

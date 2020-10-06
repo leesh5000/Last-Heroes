@@ -27,6 +27,7 @@ public class Util
 
         else
         {
+            // GetComponentsInChildren 은 재귀적으로 찾아주는 함수
             foreach (T component in go.GetComponentsInChildren<T>())
             {
                 if (string.IsNullOrEmpty(name) || component.name == name)
