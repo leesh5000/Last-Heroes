@@ -1,25 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class LoginScene : BaseScene
+public class LobbyScene : BaseScene
 {
     protected override void Init()
     {
         base.Init();
 
-        SceneType = Define.Scene.Login;
+        SceneType = Define.Scene.Lobby;
 
-        if (Managers.Game.Ui_LoginScene == null)
+        if (Managers.Game.Ui_LobbyScene == null)
         {
-            Managers.Game.Ui_LoginScene = Managers.UI.OpenSceneUI<UI_LoginScene>().gameObject;
+            Managers.Game.Ui_LobbyScene = Managers.UI.OpenSceneUI<UI_LobbyScene>().gameObject;
         }
     }
 
     void Update()
     {
-
+        
     }
 
     public override void Clear()

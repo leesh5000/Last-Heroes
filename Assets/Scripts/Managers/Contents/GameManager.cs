@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager
 {
     public GameObject Ui_LoginScene { get; set; }
-
+    public GameObject Ui_LobbyScene { get; set; }
     public GameObject Ui_GameScene { get; set; }
 
     public GameObject Statue { get; set; }

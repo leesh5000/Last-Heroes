@@ -11,6 +11,10 @@ public class UI_GameScene : UI_SceneBase
     Canvas uI_MinimapPlusButton;
     Canvas uI_MinimapMinusButton;
 
+    enum Buttons
+    {
+    }
+
     public override void Init()
     {
         base.Init();
