@@ -47,6 +47,12 @@ namespace ContentsData
     }
 
     [Serializable]
+    public class ItemStat
+    {
+
+    }
+
+    [Serializable]
     public class ChracterStatDataLoader : ILoader<string, ChracterStat>
     {
         public List<ChracterStat> stats = new List<ChracterStat>();
