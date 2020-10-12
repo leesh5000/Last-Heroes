@@ -11,13 +11,16 @@ public interface ILoader<Key, Value>
 
 public class DataManager
 {
+    public Dictionary<string, ContentsData.ItemStat> ItemStatDict { get; private set; } = new Dictionary<string, ContentsData.ItemStat>();
+
     public Dictionary<string, ContentsData.ChracterStat> ChracterStatDict { get; private set; } = new Dictionary<string, ContentsData.ChracterStat>();
 
     public Dictionary<string, ContentsData.WaveMonsterStat> WaveMonsterStatDict { get; private set; } = new Dictionary<string, ContentsData.WaveMonsterStat>();
 
-
     public void Init()
     {
+        ItemStatDict = LoadJson<ContentsData.ItemStatDataLoader, string, ContentsData.ItemStat>("Data/ItemStatData").ConvertDict();
+
         ChracterStatDict = LoadJson<ContentsData.ChracterStatDataLoader, string, ContentsData.ChracterStat>("Data/ChracterStatData").ConvertDict();
 
         WaveMonsterStatDict = LoadJson<ContentsData.WaveMonsterStatDataLoader, string, ContentsData.WaveMonsterStat>("Data/WaveMonsterStatData").ConvertDict();

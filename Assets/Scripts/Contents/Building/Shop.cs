@@ -35,7 +35,7 @@ public class Shop : Building
         {
             if (collider.gameObject.CompareTag("Player"))
             {
-                colliders.Clear();
+                colliders.Clear(); 
                 break;
             }
         }

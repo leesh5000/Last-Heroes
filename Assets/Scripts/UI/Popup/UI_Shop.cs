@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class UI_Shop : UI_PopupBase
 {
+    public Transform ShopItemList { get; set; }
+
     enum Buttons
     {
         ShopExitButton,
@@ -14,6 +16,11 @@ public class UI_Shop : UI_PopupBase
     enum Images
     {
         BlockerImage,
+    }
+
+    enum GameObjects
+    {
+
     }
 
     public override void Init()
@@ -28,6 +35,25 @@ public class UI_Shop : UI_PopupBase
 
         BindUIEvent(shopExitButton.gameObject, ShopExitButtonClick, Define.UIEvent.OnPointerClick);
         BindUIEvent(blockerImage.gameObject, BlockerImageClick, Define.UIEvent.OnPointerClick);
+
+        ShopItemList = Util.FindChildren(gameObject, "ShopItemList", true).transform;
+
+        if (Managers.Game.LobbyShop != null)
+        {
+            if (Managers.Game.LobbyShop.Items.Count > 0)
+            {
+                for (int i=0; i<Managers.Game.LobbyShop.Items.Count; i++)
+                {
+                    Item item = Managers.Game.LobbyShop.Items[i];
+
+                    item.transform.SetParent(ShopItemList.GetChild(i));
+                    item.gameObject.transform.localPosition = Vector3.zero;
+
+                    BindUIEvent(item.gameObject, ItemOnBeginDrag, Define.UIEvent.OnBeginDrag);
+
+                }
+            }
+        }
     }
 
     void ShopExitButtonClick(PointerEventData eventData)
@@ -44,5 +70,10 @@ public class UI_Shop : UI_PopupBase
             return;
 
         Managers.UI.UI_Shop.gameObject.GetComponent<UI_Shop>().ClosePopupUI();
+    }
+
+    void ItemOnBeginDrag(PointerEventData eventData)
+    {
+
     }
 }

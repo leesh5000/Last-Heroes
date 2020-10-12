@@ -12,6 +12,8 @@ public class GameManager
     public GameObject Statue { get; set; }
     public GameObject Player { get; set; }
 
+    public LobbyShop LobbyShop { get; set; }
+
     public GameObject MainCamera { get; set; }
     public GameObject MinimapCamera { get; set; }
     public GameObject WorldmapCamera { get; set; }

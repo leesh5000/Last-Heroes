@@ -8,6 +8,18 @@ using UnityEngine;
 namespace ContentsData
 {
     [Serializable]
+    public class ItemStat
+    {
+        public string id;
+
+        public int level;
+        public string type;
+
+        public int attack;
+        public int attackSpeed;
+    }
+
+    [Serializable]
     public class ChracterStat
     {
         public string id;
@@ -47,9 +59,19 @@ namespace ContentsData
     }
 
     [Serializable]
-    public class ItemStat
+    public class ItemStatDataLoader : ILoader<string, ItemStat>
     {
+        public List<ItemStat> stats = new List<ItemStat>();
 
+        public Dictionary<string, ItemStat> ConvertDict()
+        {
+            Dictionary<string, ItemStat> dict = new Dictionary<string, ItemStat>();
+
+            foreach (ItemStat stat in stats)
+                dict.Add(stat.id, stat);
+
+            return dict;
+        }
     }
 
     [Serializable]

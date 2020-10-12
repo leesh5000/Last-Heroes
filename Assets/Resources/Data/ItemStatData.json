@@ -1,0 +1,13 @@
+{
+  "stats": [
+    {
+        "id": "Sword",
+
+        "level": "1",
+        "type": "Weapon",
+
+        "attack": "5",
+        "attackSpeed": "15"
+    }
+  ]
+}

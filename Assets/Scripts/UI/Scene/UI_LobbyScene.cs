@@ -74,7 +74,10 @@ public class UI_LobbyScene : UI_SceneBase
 
     void ShopButtonClick(PointerEventData eventData)
     {
-
+        if (!Util.IsValid(Managers.UI.UI_Shop))
+        {
+            Managers.UI.UI_Shop = Managers.UI.OpenPopupUI<UI_Shop>().gameObject;
+        }
     }
 
     void ForgeButtonClick(PointerEventData eventData)
