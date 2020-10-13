@@ -35,11 +35,11 @@ public class LobbyScene : BaseScene
 
     IEnumerator MoveCamera(Transform camera)
     {
-        Vector3 targetPos = new Vector3(-35, 3, -15);
+        Vector3 targetPos = new Vector3(-35.0f, 2.0f, -15.0f);
 
         while (camera.position != targetPos)
         {
-            camera.position = Vector3.Slerp(camera.position, targetPos, 0.1f);
+            camera.position = Vector3.Slerp(camera.position, targetPos, 0.05f);
 
             yield return new WaitForSeconds(0.02f);
         }
@@ -51,43 +51,9 @@ public class LobbyScene : BaseScene
 
         while (camera.rotation != targetRotation)
         {
-            camera.rotation = Quaternion.Slerp(camera.rotation, targetRotation, 0.1f);
+            camera.rotation = Quaternion.Slerp(camera.rotation, targetRotation, 0.05f);
 
             yield return new WaitForSeconds(0.02f);
         }
-    }
-
-    IEnumerator FadeOut(MeshRenderer renderer)
-    {
-        Object material = Resources.Load("Arts/Environments/Materials/PolyKnights_Mat_01_Fade");
-        renderer.material = material as Material;
-
-        int i = 10;
-        while (i > 1)
-        {
-            i -= 1;
-            float f = i / 10.0f;
-            Color c = renderer.material.color;
-            c.a = f;
-            renderer.material.color = c;
-            yield return new WaitForSeconds(0.02f);
-        }
-    }
-
-    IEnumerator FadeIn(MeshRenderer renderer)
-    {
-        int i = 1;
-        while (i < 10)
-        {
-            i += 1;
-            float f = i / 10.0f;
-            Color c = renderer.material.color;
-            c.a = f;
-            renderer.material.color = c;
-            yield return new WaitForSeconds(0.02f);
-        }
-
-        Object material = Resources.Load("Arts/Environments/Materials/PolyKnights_Mat_01");
-        renderer.material = material as Material;
     }
 }
