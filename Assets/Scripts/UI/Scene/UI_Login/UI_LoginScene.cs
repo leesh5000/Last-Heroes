@@ -13,17 +13,19 @@ public class UI_LoginScene : UI_SceneBase
         //OptionButton,
     }
 
+    Button _startButton;
+
     public override void Init()
     {
         base.Init();
 
         Bind<Button>(typeof(Buttons));
 
-        Button startButton = Get<Button>((int)Buttons.StartButton);
+        _startButton = Get<Button>((int)Buttons.StartButton);
         //Button optionButton = Get<Button>((int)Buttons.OptionButton);
         //Button exitButton = Get<Button>((int)Buttons.ExitButton);
 
-        BindUIEvent(startButton.gameObject, StartButtonClick, Define.UIEvent.OnPointerClick);
+        BindUIEvent(_startButton.gameObject, StartButtonClick, Define.UIEvent.OnPointerClick);
         //BindUIEvent(optionButton.gameObject, OptionButtonClick, Define.UIEvent.OnPointerClick);
         //BindUIEvent(exitButton.gameObject, ExitButtonClick, Define.UIEvent.OnPointerClick);
     }
@@ -31,7 +33,8 @@ public class UI_LoginScene : UI_SceneBase
     void StartButtonClick(PointerEventData data)
     {
         // TODO : GameScene으로 바꿀 것
-        Managers.Scene.LoadScene(Define.Scene.Lobby);
+        Managers.UI.OpenPopupUI<UI_LoginSceneMainMenu>();
+        _startButton.gameObject.SetActive(false);
     }
 
     void OptionButtonClick(PointerEventData data)

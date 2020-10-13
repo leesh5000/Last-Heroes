@@ -50,7 +50,8 @@ public class UI_Shop : UI_PopupBase
                     item.gameObject.transform.localPosition = Vector3.zero;
 
                     BindUIEvent(item.gameObject, ItemOnBeginDrag, Define.UIEvent.OnBeginDrag);
-
+                    BindUIEvent(item.gameObject, ItemOnDrag, Define.UIEvent.OnBeginDrag);
+                    BindUIEvent(item.gameObject, ItemOnEndDrag, Define.UIEvent.OnBeginDrag);
                 }
             }
         }
@@ -73,6 +74,16 @@ public class UI_Shop : UI_PopupBase
     }
 
     void ItemOnBeginDrag(PointerEventData eventData)
+    {
+
+    }
+
+    void ItemOnDrag(PointerEventData eventData)
+    {
+
+    }
+
+    void ItemOnEndDrag(PointerEventData eventData)
     {
 
     }

@@ -19,7 +19,7 @@ public abstract class BaseScene : MonoBehaviour
     protected virtual void Init()
     {
         // EventSystem이 없다면, 생성해주기
-        Object obj = GameObject.FindObjectOfType(typeof(EventSystem));
+        Object obj = FindObjectOfType(typeof(EventSystem));
         if (obj == null)
             Managers.Resource.Instantiate("Prefabs/UI/EventSystem").name = "@EventSystem";
     }

@@ -432,9 +432,9 @@ GameObject:
   - component: {fileID: 1755443074950621770}
   - component: {fileID: 1755443074950621769}
   - component: {fileID: 1755443074950621815}
-  - component: {fileID: 8473518767128188329}
+  - component: {fileID: 2682734972298170134}
   m_Layer: 5
-  m_Name: UI_LobbyScene
+  m_Name: UI_LoginSceneMainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsUsing: 0
---- !u!114 &8473518767128188329
+--- !u!114 &2682734972298170134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1755443074950621814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9cf1f1110cb4ccf93b20f8ee76dfb7, type: 3}
+  m_Script: {fileID: 11500000, guid: 99f91e1b008aa4d8d843572bed50aadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1755443076183133868

@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: d9da920a26c6fc046a8d8e9ba8b1b740
+guid: d935b05caedf142e392194a71d25c94c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6774421269505515071
+    second: bg_grey 1_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,11 +112,32 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bg_grey 1_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 17
+        width: 241
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e1abf8044930e50800000000000000
+      internalID: 6774421269505515071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 80301dfe3bacd3648ae2944fe60d0436
+    spriteID: 74bac574a7d36814cb0982ba2c432a6f
     internalID: 0
     vertices: []
     indices: 
