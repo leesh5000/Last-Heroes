@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class LobbyScene : BaseScene
 {
+    Object[] characters;
+
     protected override void Init()
     {
         base.Init();
 
         SceneType = Define.Scene.Lobby;
 
-
-        Vector3 knightPos = new Vector3(-25, 0, -15);
+        //Vector3 knightPos = new Vector3(-71.0f, 0.0f, -13.0f);
+        Vector3 knightPos = new Vector3(-61.0f, 0.0f, -13.0f);
         GameObject knight = Managers.Resource.Instantiate("Prefabs/Character/Knight", knightPos);
-        knight.transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+        knight.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
 
         Transform camera = GameObject.Find("Main Camera").transform;
-        StartCoroutine("MoveCamera", camera);
         StartCoroutine("RotateCamera", camera);
+        StartCoroutine("MoveCamera", camera);
 
-        //GetComponent<Camera>().transform.position = Vector3.Lerp(transform.position, _cameraMoveVelocity, 5.0f);
-        //_camera.transform.rotation = Quaternion.Lerp(Quaternion.identity, Quaternion.Euler(0, 90, 0), 5.0f);
+        characters = Resources.LoadAll("Prefabs/Character");
     }
 
     void Update()
@@ -35,13 +36,18 @@ public class LobbyScene : BaseScene
 
     IEnumerator MoveCamera(Transform camera)
     {
-        Vector3 targetPos = new Vector3(-35.0f, 2.0f, -15.0f);
+        //Vector3 targetPos = new Vector3(-75.0f, 1.5f, -15.0f);
+        Vector3 targetPos = new Vector3(-65.0f, 1.5f, -15.0f);
 
+        //while (Vector3.Distance(camera.position, targetPos) > 0.25f)
         while (camera.position != targetPos)
         {
-            camera.position = Vector3.Slerp(camera.position, targetPos, 0.05f);
+            camera.position = Vector3.Lerp(camera.position, targetPos, 0.03f);
 
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.01f);
+
+            if (Vector3.Distance(camera.position, targetPos) < 2.0f && Managers.UI.UI_LobbyScene == null)
+                Managers.UI.UI_LobbyScene = Managers.UI.OpenSceneUI<UI_LobbyScene>().gameObject;
         }
     }
 
@@ -51,9 +57,9 @@ public class LobbyScene : BaseScene
 
         while (camera.rotation != targetRotation)
         {
-            camera.rotation = Quaternion.Slerp(camera.rotation, targetRotation, 0.05f);
+            camera.rotation = Quaternion.Slerp(camera.rotation, targetRotation, 0.03f);
 
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }

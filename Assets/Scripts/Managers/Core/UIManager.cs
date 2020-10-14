@@ -7,6 +7,8 @@ using UnityEngine.AI;
 
 public class UIManager
 {
+    public GameObject UI_LobbyScene { get; set; }
+
     public GameObject UI_Worldmap { get; set; }
 
     public GameObject UI_ShopDialog { get; set; }

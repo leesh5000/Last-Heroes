@@ -6,50 +6,54 @@ using UnityEngine.UI;
 
 public class UI_LobbyScene : UI_SceneBase
 {
-    enum GameObjects
-    {
-        MainMenu,
-        SelectGame,
-    }
-
     enum Buttons
     {
-        NewGameButton,
-        ContinueButton,
-        SettingButton,
+        SelectButton,
+        PrevButton,
+        NextButton,
+    }
+
+    enum Texts
+    {
+        ChracterNameText,
     }
 
     public override void Init()
     {
         base.Init();
 
-        Bind<GameObject>(typeof(GameObjects));
         Bind<Button>(typeof(Buttons));
 
-        Button newGameButton = Get<Button>((int)Buttons.NewGameButton);
-        Button continueButton = Get<Button>((int)Buttons.ContinueButton);
-        Button settingButton = Get<Button>((int)Buttons.SettingButton);
+        Button selectButton = Get<Button>((int)Buttons.SelectButton);
+        Button prevButton = Get<Button>((int)Buttons.PrevButton);
+        Button nextButton = Get<Button>((int)Buttons.NextButton);
 
-        BindUIEvent(newGameButton.gameObject, NewGameButtonClick, Define.UIEvent.OnPointerClick);
-        BindUIEvent(continueButton.gameObject, ContinueButtonClick, Define.UIEvent.OnPointerClick);
-        BindUIEvent(settingButton.gameObject, SettingButtonClick, Define.UIEvent.OnPointerClick);
+        BindUIEvent(selectButton.gameObject, SelectButtonClick, Define.UIEvent.OnPointerClick);
+        BindUIEvent(prevButton.gameObject, PrevButtonClick, Define.UIEvent.OnPointerClick);
+        BindUIEvent(nextButton.gameObject, NextButtonClick, Define.UIEvent.OnPointerClick);
+
+
+        Bind<Text>(typeof(Texts));
+
+        Text characterNameText = Get<Text>((int)Texts.ChracterNameText);
+
+
+
+        // TODO : UI_LobbyScene이 생성이 되면, 
     }
 
-    void NewGameButtonClick(PointerEventData eventData)
+    void SelectButtonClick(PointerEventData eventData)
     {
-        UI_SelectGame popupUI = Managers.UI.OpenPopupUI<UI_SelectGame>();
-        //popupUI.transform.SetParent(gameObject.transform);
-        //popupUI.transform.localPosition = Vector3.zero;
+        Managers.Scene.LoadScene(Define.Scene.Game);
     }
 
-    void ContinueButtonClick(PointerEventData eventData)
-    {
-
-    }
-
-    void SettingButtonClick(PointerEventData eventData)
+    void PrevButtonClick(PointerEventData eventData)
     {
         
+    }
 
+    void NextButtonClick(PointerEventData eventData)
+    {
+        
     }
 }
