@@ -22,8 +22,15 @@ public class GameScene : BaseScene
         if (Managers.Game.Statue == null)
             Managers.Game.Statue = GameObject.Find("Statue");
         Vector3 pos = new Vector3(Managers.Game.Statue.transform.position.x - 3, Managers.Game.Statue.transform.position.y, Managers.Game.Statue.transform.position.z);
-        if (Managers.Game.Player == null)
-            Managers.Game.Player = Managers.Game.Spawn(Define.WorldObject.Chracter, "Prefabs/Character/Knight", pos);
+        //if (Managers.Game.Player == null)
+        //    Managers.Game.Player = Managers.Game.Spawn(Define.WorldObject.Chracter, "Prefabs/Character/Knight", pos);
+        if (Managers.Game.Player == null && Managers.Game.PlayerName != null)
+        {
+            Managers.Game.Player
+                = Managers.Game.Spawn(Define.WorldObject.Chracter, $"Prefabs/Character/{Managers.Game.PlayerName}", pos);
+
+            Managers.Game.Player.GetOrAddComponent<PlayerController>();
+        }
 
         // 카메라 생성
         Transform cameraRoot = new GameObject().transform;

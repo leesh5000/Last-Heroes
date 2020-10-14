@@ -27,6 +27,7 @@ public class UI_Shop : UI_PopupBase
     {
         base.Init();
 
+        // TODO : (임시) 랜덤으로 아이템 생성 // 나중에는 Shop이 아이템을 가지고 있고, UI_Shop에서는 Shop이 가지고 있는걸 보여주기만 하면 됨
         Bind<Button>(typeof(Buttons));
         Bind<Image>(typeof(Images));
 
@@ -38,21 +39,20 @@ public class UI_Shop : UI_PopupBase
 
         ShopItemList = Util.FindChildren(gameObject, "ShopItemList", true).transform;
 
-        if (Managers.Game.LobbyShop != null)
+        if (Managers.Game.Shop != null)
         {
-            if (Managers.Game.LobbyShop.Items.Count > 0)
+            List<Item> items = Managers.Game.Shop.GetComponent<Shop>().Items;
+
+            int count = 0;
+
+            foreach (Item item in items)
             {
-                for (int i=0; i<Managers.Game.LobbyShop.Items.Count; i++)
-                {
-                    Item item = Managers.Game.LobbyShop.Items[i];
+                item.transform.SetParent(ShopItemList.GetChild(count++));
+                item.gameObject.transform.localPosition = Vector3.zero;
 
-                    item.transform.SetParent(ShopItemList.GetChild(i));
-                    item.gameObject.transform.localPosition = Vector3.zero;
-
-                    BindUIEvent(item.gameObject, ItemOnBeginDrag, Define.UIEvent.OnBeginDrag);
-                    BindUIEvent(item.gameObject, ItemOnDrag, Define.UIEvent.OnBeginDrag);
-                    BindUIEvent(item.gameObject, ItemOnEndDrag, Define.UIEvent.OnBeginDrag);
-                }
+                BindUIEvent(item.gameObject, ItemOnBeginDrag, Define.UIEvent.OnBeginDrag);
+                BindUIEvent(item.gameObject, ItemOnDrag, Define.UIEvent.OnBeginDrag);
+                BindUIEvent(item.gameObject, ItemOnEndDrag, Define.UIEvent.OnBeginDrag);
             }
         }
     }

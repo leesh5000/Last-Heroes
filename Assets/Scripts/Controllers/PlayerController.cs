@@ -52,6 +52,9 @@ public class PlayerController : CreatureController
         _fov.viewRadius = Stat.ViewRadius;
         _fov.viewAngle = Stat.ViewAngle;
 
+        // hp바 활성화하기
+        gameObject.transform.Find("UI_HPBar").gameObject.SetActive(true);
+
         _fov.targetMask = (1 <<(int)Define.Layer.WaveMonster | 1<<(int)Define.Layer.Monster);
         gameObject.tag = "Player";
     }

@@ -695,7 +695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486722372846143214}
   m_Layer: 0
-  m_Name: GameSceneMap
+  m_Name: LoginSceneMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4403,7 +4403,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4093287322038213167}
-  - component: {fileID: 7289390312331570784}
   - component: {fileID: 6796716250253231721}
   m_Layer: 12
   m_Name: Shop
@@ -4679,18 +4678,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.888787, y: 7.3785944, z: 10.670417}
   m_Center: {x: -1.1207012, y: 3.7809348, z: -0.07172778}
---- !u!114 &7289390312331570784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4093287322038213164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8473a51e259416390b8f78543f1a99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &7301853245572160800
 MeshFilter:
   m_ObjectHideFlags: 0

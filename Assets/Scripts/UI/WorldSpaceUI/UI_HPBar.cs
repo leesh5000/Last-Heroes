@@ -21,6 +21,7 @@ public class UI_HPBar : UI_Base
     private void Update()
     {
         Transform parent = transform.parent;
+
         transform.position = parent.position + Vector3.up * (parent.gameObject.GetComponentInChildren<Collider>().bounds.size.y);
         transform.rotation = Camera.main.transform.rotation;
 

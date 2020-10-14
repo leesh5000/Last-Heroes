@@ -13,6 +13,7 @@ public class UI_GameScene : UI_SceneBase
 
     enum Buttons
     {
+
     }
 
     public override void Init()

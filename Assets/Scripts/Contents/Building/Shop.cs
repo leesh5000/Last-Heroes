@@ -6,11 +6,17 @@ public class Shop : Building
 {
     List<Collider> colliders = new List<Collider>();
 
+    public List<Item> Items { get; } = new List<Item>();
+
     public override void Init()
     {
+        if (Managers.Game.Shop == null)
+            Managers.Game.Shop = gameObject;
 
+        Item item = Managers.Resource.Instantiate("Prefabs/Item/Sword").GetComponent<Item>();
+        Items.Add(item);
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
         colliders.Add(other);

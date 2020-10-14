@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LobbyScene : BaseScene
 {
-    Object[] characters;
+    //Object[] characters;
 
     protected override void Init()
     {
@@ -12,16 +12,16 @@ public class LobbyScene : BaseScene
 
         SceneType = Define.Scene.Lobby;
 
-        //Vector3 knightPos = new Vector3(-71.0f, 0.0f, -13.0f);
-        Vector3 knightPos = new Vector3(-61.0f, 0.0f, -13.0f);
-        GameObject knight = Managers.Resource.Instantiate("Prefabs/Character/Knight", knightPos);
-        knight.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
+        ////Vector3 knightPos = new Vector3(-71.0f, 0.0f, -13.0f);
+        //Vector3 knightPos = new Vector3(-61.0f, 0.0f, -13.0f);
+        //GameObject knight = Managers.Resource.Instantiate("Prefabs/Character/Knight", knightPos);
+        //knight.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
 
         Transform camera = GameObject.Find("Main Camera").transform;
         StartCoroutine("RotateCamera", camera);
         StartCoroutine("MoveCamera", camera);
 
-        characters = Resources.LoadAll("Prefabs/Character");
+        //characters = Resources.LoadAll("Prefabs/Character");
     }
 
     void Update()
@@ -42,7 +42,7 @@ public class LobbyScene : BaseScene
         //while (Vector3.Distance(camera.position, targetPos) > 0.25f)
         while (camera.position != targetPos)
         {
-            camera.position = Vector3.Lerp(camera.position, targetPos, 0.03f);
+            camera.position = Vector3.Lerp(camera.position, targetPos, 0.04f);
 
             yield return new WaitForSeconds(0.01f);
 
@@ -57,7 +57,7 @@ public class LobbyScene : BaseScene
 
         while (camera.rotation != targetRotation)
         {
-            camera.rotation = Quaternion.Slerp(camera.rotation, targetRotation, 0.03f);
+            camera.rotation = Quaternion.Slerp(camera.rotation, targetRotation, 0.04f);
 
             yield return new WaitForSeconds(0.01f);
         }

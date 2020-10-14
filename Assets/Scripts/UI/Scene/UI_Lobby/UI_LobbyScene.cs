@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UI_LobbyScene : UI_SceneBase
 {
+    // 로비씬 UI에서 
     enum Buttons
     {
         SelectButton,
@@ -15,8 +17,10 @@ public class UI_LobbyScene : UI_SceneBase
 
     enum Texts
     {
-        ChracterNameText,
+        CharacterNameText,
     }
+
+    Object[] characters;
 
     public override void Init()
     {
@@ -32,14 +36,20 @@ public class UI_LobbyScene : UI_SceneBase
         BindUIEvent(prevButton.gameObject, PrevButtonClick, Define.UIEvent.OnPointerClick);
         BindUIEvent(nextButton.gameObject, NextButtonClick, Define.UIEvent.OnPointerClick);
 
-
         Bind<Text>(typeof(Texts));
 
-        Text characterNameText = Get<Text>((int)Texts.ChracterNameText);
+        Text characterNameText = Get<Text>((int)Texts.CharacterNameText);
 
+        characters = Resources.LoadAll("Prefabs/Character");
 
+        Vector3 characterSpawnPos = new Vector3(-61.0f, 0.0f, -13.0f);
+        Instantiate(characters[0], characterSpawnPos, Quaternion.Euler(0.0f, -90.0f, 0.0f));
+        Managers.Game.PlayerName = characters[0].name;
 
-        // TODO : UI_LobbyScene이 생성이 되면, 
+        Dictionary<string, ContentsData.ChracterStat> statDict = Managers.Data.ChracterStatDict;
+        ContentsData.ChracterStat stat = statDict[characters[0].name];
+
+        characterNameText.text = stat.id;
     }
 
     void SelectButtonClick(PointerEventData eventData)

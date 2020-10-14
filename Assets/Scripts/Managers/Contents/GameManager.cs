@@ -10,9 +10,11 @@ public class GameManager
     public GameObject Ui_GameScene { get; set; }
 
     public GameObject Statue { get; set; }
-    public GameObject Player { get; set; }
 
-    public LobbyShop LobbyShop { get; set; }
+    public GameObject Player { get; set; }
+    public string PlayerName { get; set; }
+
+    public GameObject Shop { get; set; }
 
     public GameObject MainCamera { get; set; }
     public GameObject MinimapCamera { get; set; }
