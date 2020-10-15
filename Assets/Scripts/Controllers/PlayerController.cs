@@ -54,6 +54,8 @@ public class PlayerController : CreatureController
 
         // hp바 활성화하기
         gameObject.transform.Find("UI_HPBar").gameObject.SetActive(true);
+        
+        
 
         _fov.targetMask = (1 <<(int)Define.Layer.WaveMonster | 1<<(int)Define.Layer.Monster);
         gameObject.tag = "Player";
@@ -71,8 +73,12 @@ public class PlayerController : CreatureController
 
         input.y = 0;
         Vector3 dir = input.normalized;
-
+        
         transform.forward = Vector3.Slerp(transform.forward, dir, 0.15f);
+
+        if (Physics.Raycast(transform.position, dir, 1.0f, _fov.targetMask))
+            dir = Vector3.zero;
+
         transform.position += dir * Stat.MoveSpeed * Time.smoothDeltaTime;
     }
 

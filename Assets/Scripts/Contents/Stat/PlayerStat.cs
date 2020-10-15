@@ -50,6 +50,7 @@ public class PlayerStat : CreatureStat
     public override void SetStat(Define.WorldObject type, string id)
     {
         Dictionary<string, ContentsData.ChracterStat> statDict = Managers.Data.ChracterStatDict;
+
         ContentsData.ChracterStat stat = statDict[id];
 
         Level = stat.level;

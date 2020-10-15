@@ -11,10 +11,14 @@ public class UI_HPBar : UI_Base
     }
 
     CreatureStat _stat;
+    float _targetHeight;
 
     public override void Init()
     {
         Bind<GameObject>(typeof(GameObjects));
+
+        _stat = transform.parent.GetComponent<CreatureStat>();
+        _targetHeight = (transform.parent.gameObject.GetComponentInChildren<Collider>().bounds.size.y);
         //_stat = transform.parent.GetComponent<Stat>();
     }
 
@@ -22,10 +26,9 @@ public class UI_HPBar : UI_Base
     {
         Transform parent = transform.parent;
 
-        transform.position = parent.position + Vector3.up * (parent.gameObject.GetComponentInChildren<Collider>().bounds.size.y);
+        transform.position = parent.position + Vector3.up * _targetHeight;
         transform.rotation = Camera.main.transform.rotation;
 
-        _stat = transform.parent.GetComponent<CreatureStat>();
         if (_stat != null)
         {
             float ratio = _stat.Hp / (float)_stat.MaxHp;
@@ -37,4 +40,6 @@ public class UI_HPBar : UI_Base
     {
         Get<GameObject>((int)GameObjects.HPBar).GetComponent<Slider>().value = ratio;
     }
+
+
 }

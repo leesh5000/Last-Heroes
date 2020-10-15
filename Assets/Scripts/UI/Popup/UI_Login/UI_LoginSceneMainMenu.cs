@@ -45,4 +45,6 @@ public class UI_LoginSceneMainMenu : UI_PopupBase
 
 
     }
+
+    // TODO : 체력바 상단에 ?
 }
