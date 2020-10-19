@@ -19,7 +19,6 @@ public class UI_HPBar : UI_Base
 
         _stat = transform.parent.GetComponent<CreatureStat>();
         _targetHeight = (transform.parent.gameObject.GetComponentInChildren<Collider>().bounds.size.y);
-        //_stat = transform.parent.GetComponent<Stat>();
     }
 
     private void Update()

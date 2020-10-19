@@ -34,9 +34,6 @@ public class GameManager
 
         switch (type)
         {
-            case Define.WorldObject.WaveMonster:
-                break;
-
             case Define.WorldObject.Monster:
                 break;
 
@@ -54,9 +51,6 @@ public class GameManager
 
         switch (type)
         {
-            case Define.WorldObject.WaveMonster:
-                break;
-
             case Define.WorldObject.Monster:
                 break;
 
@@ -78,12 +72,6 @@ public class GameManager
                 {
                     if (_player == go)
                         _player = null;
-                }
-                break;
-
-            case Define.WorldObject.WaveMonster:
-                {
-
                 }
                 break;
 

@@ -15,7 +15,7 @@ public class DataManager
 
     public Dictionary<string, ContentsData.ChracterStat> ChracterStatDict { get; private set; } = new Dictionary<string, ContentsData.ChracterStat>();
 
-    public Dictionary<string, ContentsData.WaveMonsterStat> WaveMonsterStatDict { get; private set; } = new Dictionary<string, ContentsData.WaveMonsterStat>();
+    public Dictionary<string, ContentsData.MonsterStat> MonsterStatDict { get; private set; } = new Dictionary<string, ContentsData.MonsterStat>();
 
     public void Init()
     {
@@ -23,7 +23,7 @@ public class DataManager
 
         ChracterStatDict = LoadJson<ContentsData.ChracterStatDataLoader, string, ContentsData.ChracterStat>("Data/ChracterStatData").ConvertDict();
 
-        WaveMonsterStatDict = LoadJson<ContentsData.WaveMonsterStatDataLoader, string, ContentsData.WaveMonsterStat>("Data/WaveMonsterStatData").ConvertDict();
+        MonsterStatDict = LoadJson<ContentsData.MonsterStatDataLoader, string, ContentsData.MonsterStat>("Data/MonsterStatData").ConvertDict();
     }
 
     Loader LoadJson<Loader, Key, Value>(string path) where Loader : ILoader<Key, Value>

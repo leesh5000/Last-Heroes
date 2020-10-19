@@ -22,40 +22,36 @@ namespace ContentsData
     [Serializable]
     public class ChracterStat
     {
-        public string id;
-
-        public int level;
-        public int totalExp;
-
-        public int maxHp;
-        public int attack;
-        public int defense;
-
-        public float attackSpeed;
-        public float moveSpeed;
-
-        public int attackRange;
-        public int viewRadius;
-        public int viewAngle;
+        public string ID;
+        public string SubName;
+        public string Description;
+        public float AttackRange;
+        public float AttackSpeed;
+        public float MoveSpeed;
+        public int STR;
+        public int AGI;
+        public int INT;
+        public int Level;
+        public int EXP;
+        public int HP;
+        public int MP;
+        public int Attack;
+        public int Defense;
     }
 
     [Serializable]
-    public class WaveMonsterStat
+    public class MonsterStat
     {
-        public string id;
-
-        public int level;
-
-        public int maxHp;
-        public int attack;
-        public int defense;
-
-        public float attackSpeed;
-        public float moveSpeed;
-
-        public int attackRange;
-        public int viewRadius;
-        public int viewAngle;
+        public string ID;
+        public int HP;
+        public int MP;
+        public float AttackRange;
+        public float AttackSpeed;
+        public float MoveSpeed;
+        public int Attack;
+        public int Defense;
+        public int EXP;
+        public int Gold;
     }
 
     [Serializable]
@@ -84,23 +80,23 @@ namespace ContentsData
             Dictionary<string, ChracterStat> dict = new Dictionary<string, ChracterStat>();
 
             foreach (ChracterStat stat in stats)
-                dict.Add(stat.id, stat);
+                dict.Add(stat.ID, stat);
 
             return dict;
         }
     }
 
     [Serializable]
-    public class WaveMonsterStatDataLoader : ILoader<string, WaveMonsterStat>
+    public class MonsterStatDataLoader : ILoader<string, MonsterStat>
     {
-        public List<WaveMonsterStat> stats = new List<WaveMonsterStat>();
+        public List<MonsterStat> stats = new List<MonsterStat>();
 
-        public Dictionary<string, WaveMonsterStat> ConvertDict()
+        public Dictionary<string, MonsterStat> ConvertDict()
         {
-            Dictionary<string, WaveMonsterStat> dict = new Dictionary<string, WaveMonsterStat>();
+            Dictionary<string, MonsterStat> dict = new Dictionary<string, MonsterStat>();
 
-            foreach (WaveMonsterStat stat in stats)
-                dict.Add(stat.id, stat);
+            foreach (MonsterStat stat in stats)
+                dict.Add(stat.ID, stat);
 
             return dict;
         }

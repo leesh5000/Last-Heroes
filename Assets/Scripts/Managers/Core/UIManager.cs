@@ -97,8 +97,11 @@ public class UIManager
             go.transform.SetParent(parent);
 
         Canvas canvas = go.GetOrAddComponent<Canvas>();
-        canvas.renderMode = RenderMode.WorldSpace;
-        canvas.worldCamera = Camera.main;
+        if (typeof(T).Name != "UI_Damage")
+        {
+            canvas.renderMode = RenderMode.WorldSpace;
+            canvas.worldCamera = Camera.main;
+        }
 
         return Util.GetOrAddComponent<T>(go);
     }

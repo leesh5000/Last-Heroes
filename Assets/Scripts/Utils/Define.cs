@@ -85,8 +85,12 @@ public class Define
         Unknown,
         Chracter,
         Monster,
-        WaveMonster,
         NPC,
         Environment,
+    }
+
+    public enum Character
+    {
+        Knight,
     }
 }

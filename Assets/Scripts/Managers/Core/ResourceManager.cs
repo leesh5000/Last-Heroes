@@ -102,6 +102,13 @@ public class ResourceManager
         if (go == null)
             return;
 
+        Poolable poolable = go.GetComponent<Poolable>();
+        if (poolable != null)
+        {
+            Managers.Pool.Push(poolable);
+            return;
+        }
+
         Object.Destroy(go, t);
     }
 }

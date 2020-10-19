@@ -28,6 +28,7 @@ public class UI_LoginSceneMainMenu : UI_PopupBase
         BindUIEvent(settingButton.gameObject, SettingButtonClick, Define.UIEvent.OnPointerClick);
     }
 
+
     void NewGameButtonClick(PointerEventData eventData)
     {
         UI_SelectGame popupUI = Managers.UI.OpenPopupUI<UI_SelectGame>();

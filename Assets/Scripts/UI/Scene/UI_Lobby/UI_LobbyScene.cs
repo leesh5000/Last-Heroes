@@ -49,7 +49,7 @@ public class UI_LobbyScene : UI_SceneBase
         Dictionary<string, ContentsData.ChracterStat> statDict = Managers.Data.ChracterStatDict;
         ContentsData.ChracterStat stat = statDict[characters[0].name];
 
-        characterNameText.text = stat.id;
+        characterNameText.text = stat.ID;
     }
 
     void SelectButtonClick(PointerEventData eventData)

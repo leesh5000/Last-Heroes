@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 8640921865801133645}
   - component: {fileID: 7126533002728663728}
   - component: {fileID: 3004117418682633885}
-  - component: {fileID: 3900741373278427597}
+  - component: {fileID: 8215312442596291645}
   m_Layer: 5
   m_Name: UI_Worldmap
   m_TagString: Untagged
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsUsing: 0
---- !u!114 &3900741373278427597
+--- !u!114 &8215312442596291645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3900741373278427598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e3ba09f5033741a2999090ec5139ba2, type: 3}
+  m_Script: {fileID: 11500000, guid: 98931f36ef57d4203a78fc4c360375b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6516001022336275914

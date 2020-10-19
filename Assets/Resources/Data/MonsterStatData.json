@@ -1,0 +1,15 @@
+{
+    "stats": [
+        {
+            "ID": "Slime",
+            "HP": 100,
+            "AttackRange": 1.5,
+            "AttackSpeed": 1,
+            "MoveSpeed": 5,
+            "Attack": 0,
+            "Defense": 50,
+            "EXP": 5,
+            "Gold" : 10
+        }
+    ]
+}

@@ -10,14 +10,6 @@ public class GameScene : BaseScene
 
         SceneType = Define.Scene.Game;
 
-        // 스텟데이터 가져오기
-        //Dictionary<string, ContentsData.ChracterStat> chracterStatDict = Managers.Data.ChracterStatDict;
-        //Dictionary<string, ContentsData.WaveMonsterStat> waveMonsterStatDict = Managers.Data.WaveMonsterStatDict;
-
-        // GameScene UI 생성
-        if (Managers.Game.Ui_GameScene == null)
-            Managers.Game.Ui_GameScene = Managers.UI.OpenSceneUI<UI_GameScene>().gameObject;
-
         // 캐릭터 생성
         if (Managers.Game.Statue == null)
             Managers.Game.Statue = GameObject.Find("Statue");
@@ -29,6 +21,7 @@ public class GameScene : BaseScene
             Managers.Game.Player
                 = Managers.Game.Spawn(Define.WorldObject.Chracter, $"Prefabs/Character/{Managers.Game.PlayerName}", pos);
 
+            Managers.Game.Player.AddComponent(System.Type.GetType(Managers.Game.PlayerName));
             Managers.Game.Player.GetOrAddComponent<PlayerController>();
         }
 
@@ -47,6 +40,10 @@ public class GameScene : BaseScene
         {
             Managers.Resource.Instantiate("Prefabs/SpawningPool", new Vector3(5.0f, 5.0f, 50.0f));
         }
+
+        // GameScene UI 생성
+        if (Managers.Game.Ui_GameScene == null)
+            Managers.Game.Ui_GameScene = Managers.UI.OpenSceneUI<UI_GameScene>().gameObject;
     }
 
     public override void Clear()

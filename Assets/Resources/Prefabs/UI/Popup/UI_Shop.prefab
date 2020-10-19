@@ -1992,7 +1992,7 @@ GameObject:
   - component: {fileID: 5372371661712076795}
   - component: {fileID: 5372371661712076794}
   - component: {fileID: 1840727125519297067}
-  - component: {fileID: 5372371661712076798}
+  - component: {fileID: 8158269944818326259}
   m_Layer: 5
   m_Name: UI_Shop
   m_TagString: Untagged
@@ -2094,7 +2094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsUsing: 0
---- !u!114 &5372371661712076798
+--- !u!114 &8158269944818326259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2103,7 +2103,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5372371661712076793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8076ee69fcfa249c2a830800a32bd95d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cc39d42597c849059398092d96bd2b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6784712825991072269

@@ -283,7 +283,6 @@ GameObject:
   - component: {fileID: 166351163517671664}
   - component: {fileID: 138441509163635803}
   - component: {fileID: 8129267883230582940}
-  - component: {fileID: 3486436842170009342}
   - component: {fileID: 4305657699999296979}
   m_Layer: 10
   m_Name: Slime
@@ -306,6 +305,7 @@ Transform:
   - {fileID: 1549102070184535879}
   - {fileID: 6199561223556926044}
   - {fileID: 3269748730880290425}
+  - {fileID: 1184780048918141459}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -350,21 +350,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3486436842170009342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5095764349106790639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75239fc94bfe04b8f8e1e20cd652b48e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _state: 0
-  _lockTarget: {fileID: 0}
-  _fov: {fileID: 0}
 --- !u!135 &4305657699999296979
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -409,6 +394,36 @@ Transform:
   - {fileID: 7478054364100107210}
   m_Father: {fileID: 44649766134906418}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5358701836404010495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1184780048918141459}
+  m_Layer: 10
+  m_Name: HUDPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1184780048918141459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5358701836404010495}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.178, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 166351163517671664}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6150608789879486264
 GameObject:
