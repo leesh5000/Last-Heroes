@@ -7,7 +7,6 @@ public class Item : MonoBehaviour
 {
     string _itemName;
     ItemStat _itemStat;
-    Text _itemText;
 
     public ItemStat ItemStat { get { return _itemStat; } }
 
@@ -15,8 +14,6 @@ public class Item : MonoBehaviour
     void Start()
     {
         _itemStat = Util.GetOrAddComponent<ItemStat>(gameObject);
-        _itemText = gameObject.transform.Find("Text").GetComponent<Text>();
-        _itemText.text = "Lv " + _itemStat.Level.ToString();
     }
 
     // Update is called once per frame

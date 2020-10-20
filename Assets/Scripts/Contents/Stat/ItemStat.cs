@@ -6,30 +6,24 @@ using UnityEngine;
 public class ItemStat : MonoBehaviour
 {
     [SerializeField]
-    protected string _id;
+    public string _id;
+    [SerializeField]
+    public int _gold;
+    [SerializeField]
+    public int _hp;
+    [SerializeField]
+    public int _attack;
+    [SerializeField]
+    public int _defense;
+    [SerializeField]
+    public float _moveSpeed;
 
-    [SerializeField]
-    protected int _level;
-    [SerializeField]
-    protected string _type;
-
-    [SerializeField]
-    protected int _attack;
-    [SerializeField]
-    protected int _attackSpeed;
-
-    [SerializeField]
     public string Id { get { return _id; } set { _id = value; } }
-
-    [SerializeField]
-    public int Level { get { return _level; } set { _level = value; } }
-    [SerializeField]
-    public string Type { get { return _type; } set { _type = value; } }
-
-    [SerializeField]
+    public int Gold { get { return _gold; } set { _gold = value; } }
+    public int Hp { get { return _hp; } set { _hp = value; } }
     public int Attack { get { return _attack; } set { _attack = value; } }
-    [SerializeField]
-    public int AttackSpeed { get { return _attackSpeed; } set { _attackSpeed = value; } }
+    public int Defense { get { return _defense; } set { _defense = value; } }
+    public float MoveSpeed { get { return _moveSpeed; } set { _moveSpeed = value; } }
 
     public void Awake()
     {
@@ -46,13 +40,11 @@ public class ItemStat : MonoBehaviour
         Dictionary<string, ContentsData.ItemStat> statDict = Managers.Data.ItemStatDict;
         ContentsData.ItemStat stat = statDict[id];
 
-        Id = stat.id;
-
-        Level = stat.level;
-        Type = stat.type;
-
-        Attack = stat.attack;
-        AttackSpeed = stat.attackSpeed;
+        Id = stat.ID;
+        Gold = stat.Gold;
+        Hp = stat.HP;
+        Attack = stat.Attack;
+        Defense = stat.Defense;
+        MoveSpeed = stat.MoveSpeed;
     }
-
 }

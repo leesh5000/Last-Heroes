@@ -22,6 +22,7 @@ public class GameScene : BaseScene
                 = Managers.Game.Spawn(Define.WorldObject.Chracter, $"Prefabs/Character/{Managers.Game.PlayerName}", pos);
 
             Managers.Game.Player.AddComponent(System.Type.GetType(Managers.Game.PlayerName));
+            Managers.Game.Player.GetOrAddComponent<PlayerInventory>();
             Managers.Game.Player.GetOrAddComponent<PlayerController>();
         }
 

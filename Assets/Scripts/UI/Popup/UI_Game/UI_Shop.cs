@@ -10,7 +10,7 @@ public class UI_Shop : UI_PopupBase
 
     enum Buttons
     {
-        ShopExitButton,
+        
     }
 
     enum Images
@@ -27,42 +27,24 @@ public class UI_Shop : UI_PopupBase
     {
         base.Init();
 
-        // TODO : (임시) 랜덤으로 아이템 생성 // 나중에는 Shop이 아이템을 가지고 있고, UI_Shop에서는 Shop이 가지고 있는걸 보여주기만 하면 됨
+        if (Util.IsValid(Managers.UI.UI_GameScene))
+        {
+            GameObject UI_Inven = Managers.UI.UI_GameScene.GetComponent<UI_GameScene>().UI_Inven;
+            GameObject UI_Skill = Managers.UI.UI_GameScene.GetComponent<UI_GameScene>().UI_Skill;
+
+            if (UI_Skill.activeSelf)
+            {
+                UI_Skill.SetActive(false);
+                UI_Inven.SetActive(true);
+            }
+        }
+
         Bind<Button>(typeof(Buttons));
         Bind<Image>(typeof(Images));
 
-        Button shopExitButton = Get<Button>((int)Buttons.ShopExitButton);
         Image blockerImage = Get<Image>((int)Images.BlockerImage);
 
-        BindUIEvent(shopExitButton.gameObject, ShopExitButtonClick, Define.UIEvent.OnPointerClick);
         BindUIEvent(blockerImage.gameObject, BlockerImageClick, Define.UIEvent.OnPointerClick);
-
-        ShopItemList = Util.FindChildren(gameObject, "ShopItemList", true).transform;
-
-        if (Managers.Game.Shop != null)
-        {
-            List<Item> items = Managers.Game.Shop.GetComponent<Shop>().Items;
-
-            int count = 0;
-
-            foreach (Item item in items)
-            {
-                item.transform.SetParent(ShopItemList.GetChild(count++));
-                item.gameObject.transform.localPosition = Vector3.zero;
-
-                BindUIEvent(item.gameObject, ItemOnBeginDrag, Define.UIEvent.OnBeginDrag);
-                BindUIEvent(item.gameObject, ItemOnDrag, Define.UIEvent.OnBeginDrag);
-                BindUIEvent(item.gameObject, ItemOnEndDrag, Define.UIEvent.OnBeginDrag);
-            }
-        }
-    }
-
-    void ShopExitButtonClick(PointerEventData eventData)
-    {
-        if (!Util.IsValid(Managers.UI.UI_Shop))
-            return;
-
-        Managers.UI.UI_Shop.gameObject.GetComponent<UI_Shop>().ClosePopupUI();
     }
 
     void BlockerImageClick(PointerEventData eventData)

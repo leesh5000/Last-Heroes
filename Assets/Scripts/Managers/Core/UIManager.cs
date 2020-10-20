@@ -15,6 +15,7 @@ public class UIManager
     public GameObject UI_Shop { get; set; }
     public GameObject UI_Inventory { get; set; }
 
+    public GameObject UI_GameScene { get; set; }
 
     int _order = 10;
 
@@ -97,7 +98,7 @@ public class UIManager
             go.transform.SetParent(parent);
 
         Canvas canvas = go.GetOrAddComponent<Canvas>();
-        if (typeof(T).Name != "UI_Damage")
+        if (!typeof(T).Name.Contains("HUD"))
         {
             canvas.renderMode = RenderMode.WorldSpace;
             canvas.worldCamera = Camera.main;

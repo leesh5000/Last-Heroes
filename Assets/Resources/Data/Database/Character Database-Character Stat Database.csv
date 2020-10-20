@@ -1,0 +1,2 @@
+ID,SubName,Description,AttackRange,AttackSpeed,MoveSpeed,STR,AGI,INT,Level,EXP,HP,MP,Attack,Defense
+Knight,King who lost power,"Before Great War, as the Emperor of the Empire, he lost everything after the war. Help him find the glory!",1.5,1.0,15,30,20,10,1,100,100,50,30,0

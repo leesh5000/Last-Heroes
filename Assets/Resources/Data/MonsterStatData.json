@@ -7,7 +7,7 @@
             "AttackSpeed": 1,
             "MoveSpeed": 5,
             "Attack": 0,
-            "Defense": 50,
+            "Defense": 0,
             "EXP": 5,
             "Gold" : 10
         }

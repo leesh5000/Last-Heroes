@@ -10,13 +10,12 @@ namespace ContentsData
     [Serializable]
     public class ItemStat
     {
-        public string id;
-
-        public int level;
-        public string type;
-
-        public int attack;
-        public int attackSpeed;
+        public string ID;
+        public int Gold;
+        public int HP;
+        public int Attack;
+        public int Defense;
+        public float MoveSpeed;
     }
 
     [Serializable]
@@ -64,7 +63,7 @@ namespace ContentsData
             Dictionary<string, ItemStat> dict = new Dictionary<string, ItemStat>();
 
             foreach (ItemStat stat in stats)
-                dict.Add(stat.id, stat);
+                dict.Add(stat.ID, stat);
 
             return dict;
         }

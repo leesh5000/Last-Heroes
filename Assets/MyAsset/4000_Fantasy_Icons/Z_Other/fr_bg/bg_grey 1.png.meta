@@ -117,10 +117,10 @@ TextureImporter:
       name: bg_grey 1_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 17
-        width: 241
-        height: 222
+        x: 13
+        y: 13
+        width: 230
+        height: 230
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
