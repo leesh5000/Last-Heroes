@@ -2,7 +2,7 @@
     "stats": [
         {
             "ID": "TinySword",
-            "Gold": 100,
+            "Gold": 10,
             "HP": 100,
             "Attack": 30,
             "Defense": 0,
@@ -10,7 +10,7 @@
         },
         {
             "ID": "TinyBoots",
-            "Gold": 200,
+            "Gold": 20,
             "HP": 0,
             "Attack": 0,
             "Defense": 10,

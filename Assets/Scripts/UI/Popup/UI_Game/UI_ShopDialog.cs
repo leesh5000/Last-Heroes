@@ -24,6 +24,15 @@ public class UI_ShopDialog : UI_PopupBase
         if (!Util.IsValid(Managers.UI.UI_Shop))
         {
             Managers.UI.UI_Shop = Managers.UI.OpenPopupUI<UI_Shop>().gameObject;
+
+            if (Util.IsValid(Managers.UI.UI_GameScene))
+            {
+                if (Managers.UI.UI_Skill.activeSelf)
+                {
+                    Managers.UI.UI_Skill.SetActive(false);
+                    Managers.UI.UI_Inven.SetActive(true);
+                }
+            }
         }
     }
 }

@@ -104,7 +104,7 @@ public class CharacterStat : CreatureStat
         INT = stat.INT;
         Exp = stat.EXP;
 
-        Gold = 0;
+        Gold = 100;
         CurrentExp = 0;
     }
 

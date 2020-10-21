@@ -16,6 +16,11 @@ public class UIManager
     public GameObject UI_Inventory { get; set; }
 
     public GameObject UI_GameScene { get; set; }
+    public GameObject UI_Inven { get; set; }
+    public GameObject UI_Skill { get; set; }
+
+    public GameObject DragItem { get; set; }
+
 
     int _order = 10;
 

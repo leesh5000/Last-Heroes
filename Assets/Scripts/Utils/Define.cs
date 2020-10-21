@@ -44,6 +44,7 @@ public class Define
         OnBeginDrag,
         OnDrag,
         OnEndDrag,
+        OnDrop,
     }
 
     public enum Scene

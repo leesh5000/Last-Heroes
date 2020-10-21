@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4846807909580501481}
   - component: {fileID: 769403204054783000}
   m_Layer: 5
-  m_Name: TinyBoots 1
+  m_Name: TinySword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
