@@ -23,7 +23,8 @@ public class UI_ShopDialog : UI_PopupBase
     {
         if (!Util.IsValid(Managers.UI.UI_Shop))
         {
-            Managers.UI.UI_Shop = Managers.UI.OpenPopupUI<UI_Shop>().gameObject;
+            //Managers.UI.UI_Shop = Managers.UI.OpenPopupUI<UI_Shop>().gameObject;
+            Managers.UI.OpenPopupUI<UI_Shop>();
 
             if (Util.IsValid(Managers.UI.UI_GameScene))
             {

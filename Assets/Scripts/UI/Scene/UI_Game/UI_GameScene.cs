@@ -21,13 +21,10 @@ public class UI_GameScene : UI_SceneBase
 
     enum GameObjects
     {
-        UI_Skill,
-        UI_Inven,
+        UI_ItemInfo,
     }
 
     public Item[] PlayerItems { get; set; } = new Item[6];
-
-    public Action<Item> OnDropItemAction = null;
 
     public override void Init()
     {
@@ -42,9 +39,7 @@ public class UI_GameScene : UI_SceneBase
         BindUIEvent(invenOpenImage.gameObject, InvenOpenImageClick, Define.UIEvent.OnPointerClick);
 
         Bind<GameObject>(typeof(GameObjects));
-        GameObject ui_inven = Get<GameObject>((int)GameObjects.UI_Inven);
-        BindUIEvent(ui_inven, ItemDrop, Define.UIEvent.OnDrop);
-        
+        Managers.UI.UI_ItemInfo = Get<GameObject>((int)GameObjects.UI_ItemInfo);
     }
 
     void SkillOpenImageClick(PointerEventData eventData)
@@ -68,19 +63,15 @@ public class UI_GameScene : UI_SceneBase
         }
     }
 
-    void ItemDrop(PointerEventData eventData)
-    {
-        Item draggedItem = Managers.UI.DragItem.GetComponent<Item>();
+    //void ItemDrop(PointerEventData eventData)
+    //{
+    //    if (Managers.UI.DragItem == null) return;
 
-        Debug.Log($"Parent Name : {draggedItem.transform.parent.name}");
+    //    Item draggedItem = Managers.UI.DragItem.GetComponent<Item>();
 
-        // TODO : 부모 이름이 ItemParentPos 여서 안 된다.
+    //    if (Managers.UI.DragItem != null)
+    //        Managers.UI.DragItem = null;
 
-        if (draggedItem == null)
-            return; 
-        if (!draggedItem.transform.parent.name.Contains("Shop"))
-            return;
-
-        OnDropItemAction.Invoke(draggedItem);
-    }
+    //    OnDropItemAction.Invoke(draggedItem);
+    //}
 }

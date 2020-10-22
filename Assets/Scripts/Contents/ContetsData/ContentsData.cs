@@ -11,6 +11,7 @@ namespace ContentsData
     public class ItemStat
     {
         public string ID;
+        public string Class;
         public int Gold;
         public int HP;
         public int Attack;

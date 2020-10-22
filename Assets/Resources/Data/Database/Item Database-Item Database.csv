@@ -1,3 +1,3 @@
-ID,Gold,HP,Attack,Defense,MoveSpeed
-TinySword,100,100,30,0,0
-TinyBoots,200,0,0,10,10
+ID,Class,Gold,HP,Attack,Defense,MoveSpeed
+Tiny Sword,Normal,10,0,30,0,0
+Tiny Boots,Unique,20,100,0,10,50

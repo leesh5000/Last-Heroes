@@ -21,6 +21,7 @@ public class UIManager
 
     public GameObject DragItem { get; set; }
 
+    public GameObject UI_ItemInfo { get; set; }
 
     int _order = 10;
 

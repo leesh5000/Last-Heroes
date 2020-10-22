@@ -105,6 +105,12 @@ public class PlayerController : CreatureController
     {
         if (ui_Joystick.JoyDir != Vector3.zero)
         {
+            //// 조이스틱을 움직였는데, 아이템 정보창이 떠있다면 닫아주기
+            //if (Util.IsValid(Managers.UI.UI_ItemInfo))
+            //{
+            //    Managers.UI.UI_ItemInfo.GetComponent<UI_ItemInfo>().ExitItemInfo();
+            //}
+
             float vAxis = ui_Joystick.JoyDir.y;
             float hAxis = ui_Joystick.JoyDir.x;
             input = CameraForward * vAxis + CameraRight * hAxis;

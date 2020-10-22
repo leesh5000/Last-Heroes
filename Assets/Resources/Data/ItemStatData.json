@@ -1,20 +1,22 @@
 {
     "stats": [
         {
-            "ID": "TinySword",
+            "ID": "Tiny Sword",
+            "Class": "Normal",
             "Gold": 10,
-            "HP": 100,
+            "HP": 0,
             "Attack": 30,
             "Defense": 0,
             "MoveSpeed": 0
         },
         {
-            "ID": "TinyBoots",
+            "ID": "Rare Boots",
+            "Class": "Unique",
             "Gold": 20,
-            "HP": 0,
+            "HP": 100,
             "Attack": 0,
             "Defense": 10,
-            "MoveSpeed": 10
+            "MoveSpeed": 50
         }
     ]
 }
