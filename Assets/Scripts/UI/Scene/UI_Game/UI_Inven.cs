@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.EventSystems;
+
 
 public class UI_Inven : UI_SceneBase, IDropHandler
 {
@@ -15,12 +17,12 @@ public class UI_Inven : UI_SceneBase, IDropHandler
         InvenSlot5,
     }
 
-    Transform invenSlot0;
-    Transform invenSlot1;
-    Transform invenSlot2;
-    Transform invenSlot3;
-    Transform invenSlot4;
-    Transform invenSlot5;
+    private Transform invenSlot0;
+    private Transform invenSlot1;
+    private Transform invenSlot2;
+    private Transform invenSlot3;
+    private Transform invenSlot4;
+    private Transform invenSlot5;
 
     public List<Item> PlayerItems;
 
@@ -43,6 +45,8 @@ public class UI_Inven : UI_SceneBase, IDropHandler
         gameObject.SetActive(false);
     }
 
+    // 상점에서 아이템을 Blocker에 드랍해서 살 수도 있고, 인벤창에 드랍해서 살 수도 있다.
+    // 인벤창에 드랍하는 경우는 아래에서 구현되었다.
     public void OnDrop(PointerEventData eventData)
     {
         if (Managers.UI.DragItem == null) return;
@@ -87,6 +91,8 @@ public class UI_Inven : UI_SceneBase, IDropHandler
     }
 
     // 아이템을 살 때는 빈 곳 부터 채우기
+    // 아이템 살 때 발생하는 이벤트
+    // 아이템을 살 때, 동시에 캐릭터 스텟을 가져와ㅅ 캐릭터 스텟을 올려준다.
     public void OnDropItemBuyEvent(Item draggedItem)
     {
         if (PlayerItems.Count == 6)
@@ -95,13 +101,13 @@ public class UI_Inven : UI_SceneBase, IDropHandler
             return;
         }
 
-        if (Managers.Game.Player.GetComponent<CharacterStat>().Gold < draggedItem.GetComponent<ItemStat>().Gold)
+        if (Managers.Game.Player.GetComponent<CharacterStat>().Gold < draggedItem.GetComponent<ItemStat>().Price)
         {
             Debug.Log("lack of Money");
             return;
         }
 
-        Managers.Game.Player.GetComponent<CharacterStat>().Gold -= draggedItem.GetComponent<ItemStat>().Gold;
+        Managers.Game.Player.GetComponent<CharacterStat>().Gold -= draggedItem.GetComponent<ItemStat>().Price;
         Item newItem = Managers.Resource.Instantiate($"Prefabs/Item/{draggedItem.name}").GetComponent<Item>();
 
         foreach (Transform child in transform.GetComponentInChildren<Transform>())
@@ -123,15 +129,38 @@ public class UI_Inven : UI_SceneBase, IDropHandler
         rectTransform.localScale = Vector3.one;
 
         PlayerItems.Add(newItem);
+
+        // 아이템 장착 후 캐릭터 스텟 수정
+        {
+            if (Managers.Game.Player == null) return;
+
+            CharacterStat characterStat = Managers.Game.Player.GetComponent<PlayerController>().Stat;
+            // newItem은 아직 Start가 실행되지 않기 때문에, draggedItem으로 접근해야한다.
+            ItemStat itemStat = draggedItem.ItemStat;
+
+            characterStat.ItemEquipment(itemStat);
+        }
     }
 
+    // 아이템 팔 때 발생하는 이벤트
+    // 아이템을 팔 때, 캐릭터 스텟을 가져와서 캐릭터 스텟을 수정한다.
     public void OnDropItemSellEvent(Item draggedItem)
     {
         if (PlayerItems.Count == 0) return;
 
         // TODO : 골드 최대치 검사하는 코드 넣기
 
-        Managers.Game.Player.GetComponent<CharacterStat>().Gold += draggedItem.GetComponent<ItemStat>().Gold;
+        // 아이템 해제 후 캐릭터 스텟 수정
+        {
+            if (Managers.Game.Player == null) return;
+
+            CharacterStat characterStat = Managers.Game.Player.GetComponent<PlayerController>().Stat;
+            ItemStat itemStat = draggedItem.ItemStat;
+
+            characterStat.ItemUnEquipment(itemStat);
+        }
+
+        Managers.Game.Player.GetComponent<CharacterStat>().Gold += draggedItem.GetComponent<ItemStat>().Price;
         PlayerItems.Remove(draggedItem);
 
         // 아이템을 팔 때는 아이템이 사라지는 것이니까 특별히 아래와 같은 코드를 넣어줄 것
@@ -141,5 +170,6 @@ public class UI_Inven : UI_SceneBase, IDropHandler
 
         Managers.Resource.Destroy(draggedItem.gameObject);
     }
+
     // TODO ; 팔 때는 정렬하지말고, 살때는 빈 곳 부터 채우기
 }

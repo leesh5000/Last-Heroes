@@ -7,21 +7,15 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler, IPointerDownHandler
 {
-    string _itemName;
-    ItemStat _itemStat;
-
-    public ItemStat ItemStat { get { return _itemStat; } }
+    public ItemStat ItemStat { get; set; }
     public Canvas ItemCanvas { get; set; }
     public Image ItemImage { get; set; }
 
-    Transform _initParent;
-
     void Start()
     {
-        _itemStat = Util.GetOrAddComponent<ItemStat>(gameObject);
+        ItemStat = Util.GetOrAddComponent<ItemStat>(gameObject);
         ItemCanvas = GetComponent<Canvas>();
         ItemImage = GetComponent<Image>();
-
     }
 
     // 아이템 드래그가 시작되면 아이템 정보창 열어주기

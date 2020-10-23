@@ -9,6 +9,5 @@ public class UI_Skill : UI_SceneBase
         base.Init();
 
         Managers.UI.UI_Skill = gameObject;
-
     }
 }

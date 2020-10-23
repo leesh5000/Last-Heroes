@@ -148,7 +148,7 @@ public class UI_Shop : UI_PopupBase
         }
     }
 
-    // 무조건 아이템 정보창을 닫는 함
+    // 무조건 아이템 정보창을 닫는 함수
     void ExitItemInfo()
     {
         if (Util.IsValid(Managers.UI.UI_ItemInfo))

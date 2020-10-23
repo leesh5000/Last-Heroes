@@ -108,6 +108,7 @@ public class UI_CharacterInfo : UI_SceneBase
         characterStatImage.gameObject.SetActive(false);
     }
 
+    // 시시각각 변하는 캐릭터 스텟을 나타내야하므로 Update문으로 사용할 것
     public void Update()
     {
         xpBarSlider.value = characterStat.CurrentExp / (float)characterStat.Exp;

@@ -56,7 +56,7 @@ public class UI_ItemInfo : UI_SceneBase
 
         currentItem = go;
         itemName.text = go.GetComponent<Item>().ItemStat.Id;
-        itemStatList = go.GetComponent<Item>().ItemStat.MakeList();
+        itemStatList = go.GetComponent<Item>().ItemStat.MakeListToItemInfo();
 
         for (int i = 0; i < itemStatList.Count; i++)
         {

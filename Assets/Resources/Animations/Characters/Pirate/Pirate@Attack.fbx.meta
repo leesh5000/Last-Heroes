@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: b7bfac257d86c4c59a6eebfd03e033fe
+guid: aa9025319ffaa40c58fcab585cfedff0
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Idle
+    second: Attack
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -19,9 +19,7 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
-      rotation in copied configuration does not match rotation in animation file:\n\t'Ball_L'
-      : rotation error = 4.950246 deg\n"
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
@@ -42,11 +40,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Attack
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 0
-      lastFrame: 55
+      firstFrame: 45
+      lastFrame: 75
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

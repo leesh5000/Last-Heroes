@@ -12,7 +12,7 @@ namespace ContentsData
     {
         public string ID;
         public string Class;
-        public int Gold;
+        public int Price;
         public int HP;
         public int Attack;
         public int Defense;

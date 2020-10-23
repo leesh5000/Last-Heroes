@@ -16,9 +16,8 @@ public class CharacterStat : CreatureStat
     protected int _agi;
     [SerializeField]
     protected int _int;
-
     [SerializeField]
-    int _currentExp;
+    private int _currentExp;
 
     public int Level { get { return _level; } set { _level = value; } }
     public string SubName { get { return _subName; } set { _subName = value; } }
@@ -123,5 +122,21 @@ public class CharacterStat : CreatureStat
     public override void OnDead(CreatureStat attackerStat)
     {
         Debug.Log("Player Dead!");
+    }
+
+    public void ItemEquipment(ItemStat itemStat)
+    {
+        Hp += itemStat.Hp;
+        Attack += itemStat.Attack;
+        Defense += itemStat.Defense;
+        MoveSpeed += itemStat.MoveSpeed;
+    }
+
+    public void ItemUnEquipment(ItemStat itemStat)
+    {
+        Hp -= itemStat.Hp;
+        Attack -= itemStat.Attack;
+        Defense -= itemStat.Defense;
+        MoveSpeed -= itemStat.MoveSpeed;
     }
 }
