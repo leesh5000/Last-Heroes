@@ -1,21 +1,38 @@
 {
-  "stats": [
-    {
-        "ID": "Knight",
-        "SubName": "King who lost power",
-        "Description": "Before Great War, as the Emperor of the Empire, he lost everything after the war. Help him find the glory!",
-        "AttackRange": 1.5,
-        "AttackSpeed": 1.0,
-        "MoveSpeed": 15.0,
-        "STR": 30,
-        "AGI": 20,
-        "INT": 10,
-        "Level": 1,
-        "EXP": 100,
-        "HP": 100,
-        "MP": 50,
-        "Attack": 30,
-        "Defense": 0
-    }
-  ]
+    "stats": [
+        {
+            "ID": "Knight",
+            "SubName": "King who lost power",
+            "Description": "Before Great War, as the Emperor of the Empire, he lost everything after the war. Help him find the glory!",
+            "AttackRange": 1.5,
+            "AttackSpeed": 1,
+            "MoveSpeed": 15,
+            "STR": 30,
+            "AGI": 20,
+            "INT": 10,
+            "Level": 1,
+            "EXP": 100,
+            "HP": 100,
+            "MP": 50,
+            "Attack": 30,
+            "Defense": 0
+        },
+        {
+            "ID": "Pirate",
+            "SubName": "Blackbeard",
+            "Description": "Captain of the Blackbeard Pirates",
+            "AttackRange": 5,
+            "AttackSpeed": 1.5,
+            "MoveSpeed": 20,
+            "STR": 20,
+            "AGI": 30,
+            "INT": 20,
+            "Level": 1,
+            "EXP": 100,
+            "HP": 150,
+            "MP": 50,
+            "Attack": 30,
+            "Defense": 10
+        }
+    ]
 }

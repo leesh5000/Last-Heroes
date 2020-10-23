@@ -82,7 +82,7 @@ public class UI_Shop : UI_PopupBase
         Managers.UI.UI_Shop.gameObject.GetComponent<UI_Shop>().ClosePopupUI();
     }
 
-    // 상점이 열려있을때, 블락커를 드래그하면 상점 나가
+    // 상점이 열려있을때, 블락커를 드래그하면 상점 나가기
     void BlockerImageOnBeginDrag(PointerEventData eventData)
     {
         if (!Util.IsValid(Managers.UI.UI_Shop))

@@ -7,14 +7,38 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : CreatureController
 {
+    public CharacterStat Stat { get; set; }
+
     Vector3 CameraForward { get { return Camera.main.transform.forward; } }
     Vector3 CameraRight { get { return Camera.main.transform.right; } }
-
     UI_Joystick ui_Joystick;
     Vector3 input;
 
     public override void Init()
     {
+        WorldObjectType = Define.WorldObject.Chracter;
+
+        gameObject.layer = (int)Define.Layer.Player;
+
+        gameObject.tag = "Player";
+
+        //Creature character = gameObject.GetComponent(Managers.Game.Player.name) as Creature;
+        // 캐릭터 스텟 가져오기
+        Stat = gameObject.GetOrAddComponent<CharacterStat>();
+
+        // NMA 가져오기
+        nma = Util.GetOrAddComponent<NavMeshAgent>(gameObject);
+        nma.avoidancePriority = 40;
+
+        // 공격 사거리 설정
+        _fov = gameObject.GetOrAddComponent<FieldOfView>();
+        _fov.targetMask = (1 <<(int)Define.Layer.WaveMonster | 1<<(int)Define.Layer.Monster);
+        _fov.ViewRadius = Stat.AttackRange;
+
+        // HP바 가져오기
+        if (gameObject.GetComponentInChildren<UI_HPBar>() == null)
+            Managers.UI.MakeWorldSpaceUI<UI_HPBar>(transform);
+
         #region 이벤트 등록
         //Managers.Input.KeyboardAction -= OnKeyboardEvent;
         //Managers.Input.KeyboardAction += OnKeyboardEvent;
@@ -24,15 +48,6 @@ public class PlayerController : CreatureController
         Managers.Input.JoystickAcition += OnJoystickEvent;
         #endregion
 
-        WorldObjectType = Define.WorldObject.Chracter;
-
-        gameObject.layer = (int)Define.Layer.Player;
-
-        gameObject.tag = "Player";
-
-        //// hp바 활성화하기
-        //gameObject.transform.Find("UI_HPBar").gameObject.SetActive(true);
-
         // 먼저 조이스틱이 없다면 만들어주기
         // joystick = GameObject.FindObjectOfType<UI_Joystick>();
         if (ui_Joystick == null)
@@ -40,19 +55,6 @@ public class PlayerController : CreatureController
             GameObject ui_GameScene = GameObject.Find("UI_GameScene");
             ui_Joystick = Util.FindChildren<UI_Joystick>(ui_GameScene);
         }
-
-        // 캐릭터 스텟 가져오기
-        //Stat = gameObject.GetOrAddComponent<PlayerStat>();
-        Creature character = gameObject.GetComponent(Managers.Game.Player.name) as Creature;
-        Stat = character.Stat;
-
-        nma = Util.GetOrAddComponent<NavMeshAgent>(gameObject);
-        nma.avoidancePriority = 40;
-
-        // 공격 사거리 설정
-        _fov = gameObject.GetOrAddComponent<FieldOfView>();
-        _fov.targetMask = (1 <<(int)Define.Layer.WaveMonster | 1<<(int)Define.Layer.Monster);
-        _fov.ViewRadius = Stat.AttackRange;
     }
 
     protected override void UpdateIdle()

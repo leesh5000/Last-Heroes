@@ -81,7 +81,6 @@ public class ResourceManager
         return Object.Instantiate<T>(original);
     }
 
-
     public void Destroy(GameObject go)
     {
         if (go == null)

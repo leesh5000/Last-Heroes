@@ -28,8 +28,8 @@ public class SpawningPool : MonoBehaviour
                 Vector3 pos = new Vector3(i, 0, j);
                 GameObject monster = Managers.Game.Spawn(Define.WorldObject.Monster, "Prefabs/Monster/Slime", pos, parent);
 
-                monster.AddComponent(System.Type.GetType(monster.name));
-                monster.GetOrAddComponent<MonsterController>();
+                //monster.AddComponent(System.Type.GetType(monster.name));
+                //monster.GetOrAddComponent<MonsterController>();
 
                 _monsterCount++;
 

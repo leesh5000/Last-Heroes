@@ -4,24 +4,32 @@ using UnityEngine;
 
 public class LobbyScene : BaseScene
 {
-    //Object[] characters;
+    GameObject[] characterOrigin;
+    public GameObject[] characters { get; set; }
+    Vector3 characterSpawnPos = new Vector3(-61.0f, 0.0f, -13.0f);
 
     protected override void Init()
     {
         base.Init();
-
         SceneType = Define.Scene.Lobby;
 
-        ////Vector3 knightPos = new Vector3(-71.0f, 0.0f, -13.0f);
-        //Vector3 knightPos = new Vector3(-61.0f, 0.0f, -13.0f);
-        //GameObject knight = Managers.Resource.Instantiate("Prefabs/Character/Knight", knightPos);
-        //knight.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
+        { // 캐릭터 데이터 불러오기 & 생성하기
+            characterOrigin = Resources.LoadAll<GameObject>("Prefabs/Character");
+            characters = new GameObject[characterOrigin.Length];
+
+            // 생성한 캐릭터 "실체"를 리스트에 넣어주기
+            for (int i=0; i<characterOrigin.Length; i++)
+            {
+                GameObject origin = characterOrigin[i];
+                characters[i] = Instantiate(origin, characterSpawnPos, Quaternion.Euler(0.0f, -90.0f, 0.0f));
+                characters[i].name = origin.name;
+                characters[i].SetActive(false);
+            }
+        }
 
         Transform camera = GameObject.Find("Main Camera").transform;
         StartCoroutine("RotateCamera", camera);
         StartCoroutine("MoveCamera", camera);
-
-        //characters = Resources.LoadAll("Prefabs/Character");
     }
 
     void Update()

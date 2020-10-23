@@ -17,8 +17,6 @@ public abstract class CreatureController : MonoBehaviour
     [SerializeField]
     protected FieldOfView _fov;
 
-    public CreatureStat Stat { get; set; }
-
     public Define.WorldObject WorldObjectType { get; protected set; } = Define.WorldObject.Unknown;
     public Transform LockTarget { get { return _lockTarget; } set { _lockTarget = value; } }
     protected NavMeshAgent nma;
@@ -58,9 +56,6 @@ public abstract class CreatureController : MonoBehaviour
     
     private void Start()
     {
-        if (gameObject.GetComponentInChildren<UI_HPBar>() == null)
-            Managers.UI.MakeWorldSpaceUI<UI_HPBar>(transform);
-
         Init();
     }
 

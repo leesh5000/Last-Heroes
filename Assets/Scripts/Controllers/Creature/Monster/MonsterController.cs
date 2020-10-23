@@ -6,21 +6,27 @@ using UnityEngine.AI;
 
 public class MonsterController : CreatureController
 {
+    public MonsterStat Stat { get; set; }
+
     public override void Init()
     {
         WorldObjectType = Define.WorldObject.Monster;
 
         gameObject.layer = (int)Define.Layer.Monster;
 
+        // 몬스터 스텟 정보 가져오기
+        Stat = gameObject.GetOrAddComponent<MonsterStat>();
+
         // NavMeshAgent
         nma = Util.GetOrAddComponent<NavMeshAgent>(gameObject);
 
-        // 몬스터 스텟 정보 가져오기
-        Creature monster = gameObject.GetComponent(gameObject.name) as Creature;
-        Stat = monster.Stat;
-
+        // FOV 가져오기
         _fov = gameObject.GetOrAddComponent<FieldOfView>();
         _fov.targetMask = (1 << (int)Define.Layer.Player);
+
+        // HP바 가져오기
+        if (gameObject.GetComponentInChildren<UI_HPBar>() == null)
+            Managers.UI.MakeWorldSpaceUI<UI_HPBar>(transform);
     }
 
     protected override void UpdateIdle()

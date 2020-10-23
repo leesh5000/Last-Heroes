@@ -20,50 +20,68 @@ public class UI_LobbyScene : UI_SceneBase
         CharacterNameText,
     }
 
-    Object[] characters;
+    Text characterNameText;
+    LobbyScene lobbyScene;
+    Dictionary<string, ContentsData.ChracterStat> statDict;
+
+    int currentIndex = 0;
+    GameObject lockTarget;
 
     public override void Init()
     {
         base.Init();
 
         Bind<Button>(typeof(Buttons));
-
         Button selectButton = Get<Button>((int)Buttons.SelectButton);
         Button prevButton = Get<Button>((int)Buttons.PrevButton);
         Button nextButton = Get<Button>((int)Buttons.NextButton);
-
         BindUIEvent(selectButton.gameObject, SelectButtonClick, Define.UIEvent.OnPointerClick);
         BindUIEvent(prevButton.gameObject, PrevButtonClick, Define.UIEvent.OnPointerClick);
         BindUIEvent(nextButton.gameObject, NextButtonClick, Define.UIEvent.OnPointerClick);
 
         Bind<Text>(typeof(Texts));
+        characterNameText = Get<Text>((int)Texts.CharacterNameText);
 
-        Text characterNameText = Get<Text>((int)Texts.CharacterNameText);
+        // UI에 나타낼 캐릭터 데이터를 가져오기, 처음에 나타낼 캐릭터는 첫번째 있는 캐릭터
+        lobbyScene = Managers.Scene.CurrentScene as LobbyScene;
+        statDict = Managers.Data.ChracterStatDict;
 
-        characters = Resources.LoadAll("Prefabs/Character");
-
-        Vector3 characterSpawnPos = new Vector3(-61.0f, 0.0f, -13.0f);
-        Instantiate(characters[0], characterSpawnPos, Quaternion.Euler(0.0f, -90.0f, 0.0f));
-        Managers.Game.PlayerName = characters[0].name;
-
-        Dictionary<string, ContentsData.ChracterStat> statDict = Managers.Data.ChracterStatDict;
-        ContentsData.ChracterStat stat = statDict[characters[0].name];
-
-        characterNameText.text = stat.ID;
+        lobbyScene.characters[currentIndex].SetActive(true);
+        lockTarget = lobbyScene.characters[currentIndex];
+        characterNameText.text = statDict[lockTarget.name].ID;
     }
 
+    // Select 버튼을 누르면, 로비씬 상에서 활성화되있는 캐릭터를 찾기
     void SelectButtonClick(PointerEventData eventData)
     {
+        if (lockTarget == null) return;
+
+        Managers.Game.PlayerName = lockTarget.name;
         Managers.Scene.LoadScene(Define.Scene.Game);
     }
 
+    // Prev버튼을 눌러주면, 현재 활성화 돼 있는 캐릭터는 비활성화 시키고, 인덱스에서 -1 인 캐릭터를 활성화 시킨 후, 그 캐릭터 정보 띄우기
     void PrevButtonClick(PointerEventData eventData)
     {
-        
+        if (currentIndex - 1 < 0) return;
+
+        lobbyScene.characters[currentIndex].SetActive(false);
+        currentIndex--;
+
+        lobbyScene.characters[currentIndex].SetActive(true);
+        lockTarget = lobbyScene.characters[currentIndex];
+        characterNameText.text = statDict[lockTarget.name].ID;
     }
 
     void NextButtonClick(PointerEventData eventData)
     {
-        
+        if (currentIndex + 1 == lobbyScene.characters.Length) return;
+
+        lobbyScene.characters[currentIndex].SetActive(false);
+        currentIndex++;
+
+        lobbyScene.characters[currentIndex].SetActive(true);
+        lockTarget = lobbyScene.characters[currentIndex];
+        characterNameText.text = statDict[lockTarget.name].ID;
     }
 }

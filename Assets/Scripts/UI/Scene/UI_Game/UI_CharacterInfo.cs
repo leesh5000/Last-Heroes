@@ -69,7 +69,7 @@ public class UI_CharacterInfo : UI_SceneBase
         base.Init();
 
         if (characterStat == null)
-            characterStat = Managers.Game.Player.GetComponent<PlayerController>().Stat as CharacterStat;
+            characterStat = Managers.Game.Player.GetComponent<PlayerController>().Stat;
 
         Bind<Slider>(typeof(Sliders));
 
