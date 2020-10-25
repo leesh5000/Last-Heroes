@@ -20,6 +20,8 @@ public class GameManager
     public GameObject MinimapCamera { get; set; }
     public GameObject WorldmapCamera { get; set; }
 
+
+
     public GameObject SpawningPool { get; set; }
     
     GameObject _player;

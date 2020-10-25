@@ -31,4 +31,5 @@ public class DataManager
         TextAsset textAsset = Managers.Resource.Load<TextAsset>(path);
         return JsonUtility.FromJson<Loader>(textAsset.text);
     }
+
 }
