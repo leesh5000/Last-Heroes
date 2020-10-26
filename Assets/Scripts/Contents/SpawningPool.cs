@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class SpawningPool : MonoBehaviour
 {
-    BoxCollider _spawnArea;
+    BoxCollider _spawnPos;
     int _monsterCount;
+    public Dictionary<int, string> WaveMonsterDic = new Dictionary<int, string>();
 
     void Start()
     {
-        _spawnArea = gameObject.GetOrAddComponent<BoxCollider>();
-        MonsterSpawn("Prefabs/Monster/Slime", gameObject.transform);
+        _spawnPos = gameObject.GetOrAddComponent<BoxCollider>();
+
+        int wave = 1;
+        if (Managers.Data.MonsterStatDict.ContainsValue($"Wave {wave++}"))
+        {
+            Managers.Data.MonsterStatDict.Con
+        }
     }
 
     void Update()
@@ -20,22 +26,8 @@ public class SpawningPool : MonoBehaviour
 
     // 웨이브 몬스터는 ObjectPooling 할 필요 없다.
     void MonsterSpawn(string path, Transform parent = null)
-    {    
-        for (int i=(int)_spawnArea.transform.position.x; i<(int)_spawnArea.bounds.max.x; i++)
-        {
-            for (int j = (int)_spawnArea.transform.position.z; j < (int)_spawnArea.bounds.max.z; j++)
-            {
-                Vector3 pos = new Vector3(i, 0, j);
-                GameObject monster = Managers.Game.Spawn(Define.WorldObject.Monster, "Prefabs/Monster/Slime", pos, parent);
-
-                //monster.AddComponent(System.Type.GetType(monster.name));
-                //monster.GetOrAddComponent<MonsterController>();
-
-                _monsterCount++;
-
-                if (_monsterCount >= 3)
-                    return;
-            }
-        }
+    {
+        string CurrentWaveMonster = 
+        Managers.Game.Spawn(Define.WorldObject.Monster, $"Prefabs/Monster/{CurrentWaveMonster}", _spawnPos);
     }
 }

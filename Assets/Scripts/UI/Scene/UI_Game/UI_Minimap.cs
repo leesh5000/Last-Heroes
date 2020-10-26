@@ -17,6 +17,8 @@ public class UI_Minimap : UI_SceneBase
 
     public override void Init()
     {
+        Managers.UI.UI_Minimap = gameObject;
+
         base.Init();
 
         Bind<GameObject>(typeof(GameObjects));
@@ -28,6 +30,8 @@ public class UI_Minimap : UI_SceneBase
         BindUIEvent(minimapImage, MinimapImageClick, Define.UIEvent.OnPointerClick);
         BindUIEvent(minimapPlusButton, MinimapPlusButtonClick, Define.UIEvent.OnPointerClick);
         BindUIEvent(minimapMinusButton, MinimapMinusButtonClick, Define.UIEvent.OnPointerClick);
+
+        gameObject.SetActive(false);
     }
 
     void MinimapImageClick(PointerEventData evnetData)

@@ -12,6 +12,8 @@ public class UI_GameScene : UI_SceneBase
     {
         PrevButton,
         NextButton,
+        OpenMapButton,
+        OpenQuestButton,
     }
 
     enum Images
@@ -23,6 +25,7 @@ public class UI_GameScene : UI_SceneBase
     enum GameObjects
     {
         UI_ItemInfo,
+        UI_Minimap,
     }
 
     public Item[] PlayerItems { get; set; } = new Item[6];
@@ -36,38 +39,37 @@ public class UI_GameScene : UI_SceneBase
         Bind<Button>(typeof(Buttons));
         Button prevButton = Get<Button>((int)Buttons.PrevButton);
         Button nextButton = Get<Button>((int)Buttons.NextButton);
+        Button openMapButton = Get<Button>((int)Buttons.OpenMapButton);
+        Button openQuestButton = Get<Button>((int)Buttons.OpenQuestButton);
         BindUIEvent(prevButton.gameObject, PrevNextButtonClick, Define.UIEvent.OnPointerClick);
         BindUIEvent(nextButton.gameObject, PrevNextButtonClick, Define.UIEvent.OnPointerClick);
+        BindUIEvent(openMapButton.gameObject, MapButtonClick, Define.UIEvent.OnPointerClick);
         BindUIEvent(prevButton.gameObject, PrevNextButtonClick, Define.UIEvent.OnBeginDrag);
-
-        Bind<Image>(typeof(Images));
-        Image skillOpenImage = Get<Image>((int)Images.Skill);
-        Image invenOpenImage = Get<Image>((int)Images.Inven);
-        BindUIEvent(skillOpenImage.gameObject, SkillOpenImageClick, Define.UIEvent.OnPointerClick);
-        BindUIEvent(invenOpenImage.gameObject, InvenOpenImageClick, Define.UIEvent.OnPointerClick);
+        BindUIEvent(nextButton.gameObject, PrevNextButtonClick, Define.UIEvent.OnBeginDrag);
+        BindUIEvent(openMapButton.gameObject, MapButtonClick, Define.UIEvent.OnBeginDrag);
 
         Bind<GameObject>(typeof(GameObjects));
         Managers.UI.UI_ItemInfo = Get<GameObject>((int)GameObjects.UI_ItemInfo);
+        Managers.UI.UI_Minimap = Get<GameObject>((int)GameObjects.UI_Minimap);
+
     }
 
-    void SkillOpenImageClick(PointerEventData eventData)
+    // 맵이 켜져있으면 끄고, 꺼져있으면 키기
+    void MapButtonClick(PointerEventData eventData)
     {
-        if (Managers.UI.UI_Skill == null)
-            Debug.Log("null");
+        if (Managers.UI.UI_Minimap == null)
+            return;
 
-        if (!Managers.UI.UI_Skill.activeSelf & Managers.UI.UI_Inven.activeSelf)
+        if (Managers.UI.UI_Minimap.activeSelf)
         {
-            Managers.UI.UI_Skill.SetActive(true);
-            Managers.UI.UI_Inven.SetActive(false);
+            Managers.UI.CloseAllPopupUI();
+            Managers.UI.UI_Minimap.SetActive(false);
         }
-    }
 
-    void InvenOpenImageClick(PointerEventData eventData)
-    {
-        if (Managers.UI.UI_Skill.activeSelf & !Managers.UI.UI_Inven.activeSelf)
+        else
         {
-            Managers.UI.UI_Skill.SetActive(false);
-            Managers.UI.UI_Inven.SetActive(true);
+            Managers.UI.CloseAllPopupUI();
+            Managers.UI.UI_Minimap.SetActive(true);
         }
     }
 

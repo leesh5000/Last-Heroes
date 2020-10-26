@@ -9,6 +9,7 @@ public class UIManager
 {
     public GameObject UI_LobbyScene { get; set; }
 
+    public GameObject UI_Minimap { get; set; }
     public GameObject UI_Worldmap { get; set; }
 
     public GameObject UI_ShopDialog { get; set; }
@@ -18,6 +19,7 @@ public class UIManager
     public GameObject UI_GameScene { get; set; }
     public GameObject UI_Inven { get; set; }
     public GameObject UI_Skill { get; set; }
+    public GameObject UI_Timer { get; set; }
 
     public GameObject DragItem { get; set; }
 
@@ -29,7 +31,6 @@ public class UIManager
     Stack<UI_PopupBase> _popupStack = new Stack<UI_PopupBase>();
     UI_SceneBase _sceneUI = null;
 
-    
     public GameObject UI_Root
     {
         get

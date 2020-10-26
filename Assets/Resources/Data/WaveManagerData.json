@@ -1,0 +1,14 @@
+{
+    "waves": [
+        {
+            "Wave": 1,
+            "Slime": 15,
+            "TurtleShell": 0
+        },
+        {
+            "Wave": 2,
+            "Slime": 20,
+            "TurtleShell": 5
+        }
+    ]
+}
