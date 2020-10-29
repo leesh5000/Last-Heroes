@@ -12,31 +12,22 @@ public class UI_Timer : UI_SceneBase
     }
 
     Text timerText;
-    private float time;
-
-    public Action TimeOutAction = null;
+    WaveManager waveManager;
 
     public override void Init()
     {
+        Managers.UI.UI_Timer = gameObject;
+
         base.Init();
 
         Bind<Text>(typeof(Texts));
         timerText = Get<Text>((int)Texts.TimerText);
 
-        time = 60.0f;
+        waveManager = Managers.Game.WaveManager.GetComponent<WaveManager>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (time > 0)
-            time -= Time.deltaTime;
-
-        timerText.text = $"WAVE {Managers.Game.CurrentWave}  :  "+Mathf.Ceil(time).ToString();
-
-        if (time == 0)
-        {
-            TimeOutAction.Invoke();
-            gameObject.SetActive(false);
-        }
+        timerText.text = $"WAVE {waveManager.currentWave}  :  " + Mathf.Ceil(waveManager.remainingTime).ToString();
     }
 }

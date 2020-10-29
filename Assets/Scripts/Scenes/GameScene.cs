@@ -33,10 +33,12 @@ public class GameScene : BaseScene
         if (Managers.Game.WorldmapCamera == null)
             Managers.Game.WorldmapCamera = Managers.Resource.Instantiate("Prefabs/Camera/WorldmapCamera", cameraRoot).GetOrAddComponent<WorldmapCameraController>().gameObject;
 
-        // 스포닝풀 생성        
-        if (Managers.Game.SpawningPool == null)
+        // WaveManager 생성        
+        if (Managers.Game.WaveManager == null)
         {
-            Managers.Resource.Instantiate("Prefabs/SpawningPool", new Vector3(5.0f, 5.0f, 50.0f));
+            GameObject waveManager = new GameObject("WaveManager");
+            waveManager.transform.position = new Vector3(5.0f, 0.0f, 50.0f);
+            waveManager.GetOrAddComponent<WaveManager>();
         }
 
         // GameScene UI 생성

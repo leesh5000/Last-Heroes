@@ -55,14 +55,6 @@ namespace ContentsData
     }
 
     [Serializable]
-    public class WaveManager
-    {
-        public int Wave;
-        public string Monster1;
-        public string Monster2;
-    }
-
-    [Serializable]
     public class ItemStatData : ILoader<string, ItemStat>
     {
         public List<ItemStat> stats = new List<ItemStat>();
@@ -105,22 +97,6 @@ namespace ContentsData
 
             foreach (MonsterStat stat in stats)
                 dict.Add(stat.ID, stat);
-
-            return dict;
-        }
-    }
-
-    [Serializable]
-    public class WaveManagerData : ILoader<int, WaveManager>
-    {
-        public List<WaveManager> waves = new List<WaveManager>();
-
-        public Dictionary<int, WaveManager> ConvertDict()
-        {
-            Dictionary<int, WaveManager> dict = new Dictionary<int, WaveManager>();
-
-            foreach (WaveManager wave in waves)
-                dict.Add(wave.Wave, wave);
 
             return dict;
         }
