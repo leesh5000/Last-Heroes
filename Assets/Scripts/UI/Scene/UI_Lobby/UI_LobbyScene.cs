@@ -22,7 +22,7 @@ public class UI_LobbyScene : UI_SceneBase
 
     Text characterNameText;
     LobbyScene lobbyScene;
-    Dictionary<string, ContentsData.ChracterStat> statDict;
+    Dictionary<string, ContentsData.CharacterStat> statDict;
 
     int currentIndex = 0;
     GameObject lockTarget;
@@ -44,7 +44,7 @@ public class UI_LobbyScene : UI_SceneBase
 
         // UI에 나타낼 캐릭터 데이터를 가져오기, 처음에 나타낼 캐릭터는 첫번째 있는 캐릭터
         lobbyScene = Managers.Scene.CurrentScene as LobbyScene;
-        statDict = Managers.Data.ChracterStatDict;
+        statDict = Managers.Data.CharacterStatDict;
 
         lobbyScene.characters[currentIndex].SetActive(true);
         lockTarget = lobbyScene.characters[currentIndex];

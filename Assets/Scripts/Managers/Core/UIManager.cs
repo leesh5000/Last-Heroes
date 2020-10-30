@@ -22,8 +22,10 @@ public class UIManager
     public GameObject UI_Timer { get; set; }
 
     public GameObject DragItem { get; set; }
+    public GameObject DragSkill { get; set; }
 
     public GameObject UI_ItemInfo { get; set; }
+    public GameObject UI_SkillInfo { get; set; }
 
     int _order = 10;
 

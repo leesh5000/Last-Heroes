@@ -42,6 +42,7 @@ public class GameScene : BaseScene
         }
 
         // GameScene UI 생성
+        // 게임씬 UI는 가장 나중에 생성해줄 것
         if (Managers.Game.Ui_GameScene == null)
             Managers.Game.Ui_GameScene = Managers.UI.OpenSceneUI<UI_GameScene>().gameObject;
     }

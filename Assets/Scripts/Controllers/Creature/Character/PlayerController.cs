@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class PlayerController : CreatureController
 {
     public CharacterStat Stat { get; set; }
+    public CharacterSkill Skill { get; set; }
 
     Vector3 CameraForward { get { return Camera.main.transform.forward; } }
     Vector3 CameraRight { get { return Camera.main.transform.right; } }
@@ -23,8 +24,11 @@ public class PlayerController : CreatureController
         gameObject.tag = "Player";
 
         //Creature character = gameObject.GetComponent(Managers.Game.Player.name) as Creature;
-        // 캐릭터 스텟 가져오기
+        // 캐릭터 스텟 정보 가져오기
         Stat = gameObject.GetOrAddComponent<CharacterStat>();
+
+        // 캐릭터 스킬 정보 가져오기
+        Skill = gameObject.GetOrAddComponent<CharacterSkill>();
 
         // NMA 가져오기
         nma = Util.GetOrAddComponent<NavMeshAgent>(gameObject);
@@ -154,7 +158,6 @@ public class PlayerController : CreatureController
             return;
         }
     }
-
 
     #region 다른입력
     void OnKeyboardEvent(Define.KeyboardEvent evt)

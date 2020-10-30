@@ -1,0 +1,46 @@
+{
+    "stats": [
+        {
+            "ID": "Power Slash  -  level 0",
+            "Require": "Hero Level 5",
+            "Type": "Active",
+            "Cost": 10,
+            "Message": "적을 강하게 내려쳐 500의 데미지를 준다."
+        },
+        {
+            "ID": "Power Slash  -  level 1",
+            "Require": "Hero Level 7",
+            "Type": "Active",
+            "Cost": 10,
+            "Message": "적을 강하게 내려쳐 500의 데미지를 준다."
+        },
+        {
+            "ID": "Power Slash  -  level 2",
+            "Require": "Hero Level 9",
+            "Type": "Active",
+            "Cost": 20,
+            "Message": "적을 강하게 내려쳐 600의 데미지를 준다."
+        },
+        {
+            "ID": "Power Slash  -  level 3",
+            "Require": "Hero Level 11",
+            "Type": "Active",
+            "Cost": 30,
+            "Message": "적을 강하게 내려쳐 700의 데미지를 준다."
+        },
+        {
+            "ID": "Power Slash  -  level 4",
+            "Require": "Hero Level 13",
+            "Type": "Active",
+            "Cost": 40,
+            "Message": "적을 강하게 내려쳐 800의 데미지를 준다."
+        },
+        {
+            "ID": "Power Slash  -  level 5",
+            "Require": "Hero Level 15",
+            "Type": "Active",
+            "Cost": 50,
+            "Message": "적을 강하게 내려쳐 900의 데미지를 준다."
+        }
+    ]
+}

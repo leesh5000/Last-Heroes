@@ -51,6 +51,7 @@ public class CharacterStat : CreatureStat
                         }
                         break;
                 }
+
             //int currentLevel = Level;
             //while (true)
             //{
@@ -80,9 +81,9 @@ public class CharacterStat : CreatureStat
 
     public override void SetStat(Define.WorldObject type, string id)
     {
-        Dictionary<string, ContentsData.ChracterStat> statDict = Managers.Data.ChracterStatDict;
-
-        ContentsData.ChracterStat stat = statDict[id];
+        Dictionary<string, ContentsData.CharacterStat> statDict = Managers.Data.CharacterStatDict;
+        
+        ContentsData.CharacterStat stat = statDict[id];
 
         Id = stat.ID;
         MaxHp = stat.HP;

@@ -95,8 +95,8 @@ public class UI_CharacterInfo : UI_SceneBase
         spdText = Get<Text>((int)Texts.SPDText);
         goldText = Get<Text>((int)Texts.GoldText);
 
-        Dictionary<string, ContentsData.ChracterStat> statDict = Managers.Data.ChracterStatDict;
-        ContentsData.ChracterStat stat = statDict[Managers.Game.Player.name];
+        Dictionary<string, ContentsData.CharacterStat> statDict = Managers.Data.CharacterStatDict;
+        ContentsData.CharacterStat stat = statDict[Managers.Game.Player.name];
         //characterSubNameText.text = stat.description;
 
         Bind<Button>(typeof(Buttons));
