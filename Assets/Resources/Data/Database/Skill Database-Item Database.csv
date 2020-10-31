@@ -1,7 +1,0 @@
-ID,Require,Type,Cost,Message
-Power Slash  -  level 0,Hero Level 5,Active,10,적을 강하게 내려쳐 500의 데미지를 준다.
-Power Slash  -  level 1,Hero Level 7,Active,10,적을 강하게 내려쳐 500의 데미지를 준다.
-Power Slash  -  level 2,Hero Level 9,Active,20,적을 강하게 내려쳐 600의 데미지를 준다.
-Power Slash  -  level 3,Hero Level 11,Active,30,적을 강하게 내려쳐 700의 데미지를 준다.
-Power Slash  -  level 4,Hero Level 13,Active,40,적을 강하게 내려쳐 800의 데미지를 준다.
-Power Slash  -  level 5,Hero Level 15,Active,50,적을 강하게 내려쳐 900의 데미지를 준다.

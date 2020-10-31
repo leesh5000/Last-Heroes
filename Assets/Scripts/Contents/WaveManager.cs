@@ -9,13 +9,18 @@ public class WaveManager : MonoBehaviour
     int currentMonsterCount;
     public float remainingTime;
 
-    GameObject[] MonsterWaves;
+    GameObject[] MonsterWaves = new GameObject[5];
 
     void Start()
     {
-        MonsterWaves = Resources.LoadAll<GameObject>("Prefabs/Monster");
-
         Managers.Game.WaveManager = gameObject;
+
+        MonsterWaves[0] = Resources.Load<GameObject>("Prefabs/Monster/Slime");
+        MonsterWaves[1] = Resources.Load<GameObject>("Prefabs/Monster/TurtleShell");
+        MonsterWaves[2] = Resources.Load<GameObject>("Prefabs/Monster/Chest");
+        MonsterWaves[3] = Resources.Load<GameObject>("Prefabs/Monster/Beholder");
+        MonsterWaves[4] = Resources.Load<GameObject>("Prefabs/Monster/BlackKnight");
+
         //currentMonsterCount = Managers.Game.MonsterCount;
 
         currentWave = 1;

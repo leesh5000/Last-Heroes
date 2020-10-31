@@ -18,9 +18,16 @@ public class UI_LobbyScene : UI_SceneBase
     enum Texts
     {
         CharacterNameText,
+        STRText,
+        AGIText,
+        INTText,
     }
 
     Text characterNameText;
+    Text strText;
+    Text agiText;
+    Text intText;
+    
     LobbyScene lobbyScene;
     Dictionary<string, ContentsData.CharacterStat> statDict;
 
@@ -41,6 +48,9 @@ public class UI_LobbyScene : UI_SceneBase
 
         Bind<Text>(typeof(Texts));
         characterNameText = Get<Text>((int)Texts.CharacterNameText);
+        strText = Get<Text>((int)Texts.STRText);
+        agiText = Get<Text>((int)Texts.AGIText);
+        intText = Get<Text>((int)Texts.INTText);
 
         // UI에 나타낼 캐릭터 데이터를 가져오기, 처음에 나타낼 캐릭터는 첫번째 있는 캐릭터
         lobbyScene = Managers.Scene.CurrentScene as LobbyScene;
@@ -48,7 +58,11 @@ public class UI_LobbyScene : UI_SceneBase
 
         lobbyScene.characters[currentIndex].SetActive(true);
         lockTarget = lobbyScene.characters[currentIndex];
+
         characterNameText.text = statDict[lockTarget.name].ID;
+        strText.text = $"STR  "+  statDict[lockTarget.name].STR.ToString();
+        agiText.text = $"AGI  " + statDict[lockTarget.name].AGI.ToString();
+        intText.text = $"INT  " + statDict[lockTarget.name].INT.ToString();
     }
 
     // Select 버튼을 누르면, 로비씬 상에서 활성화되있는 캐릭터를 찾기
@@ -70,7 +84,11 @@ public class UI_LobbyScene : UI_SceneBase
 
         lobbyScene.characters[currentIndex].SetActive(true);
         lockTarget = lobbyScene.characters[currentIndex];
+
         characterNameText.text = statDict[lockTarget.name].ID;
+        strText.text = $"STR  " + statDict[lockTarget.name].STR.ToString();
+        agiText.text = $"AGI  " + statDict[lockTarget.name].AGI.ToString();
+        intText.text = $"INT  " + statDict[lockTarget.name].INT.ToString();
     }
 
     void NextButtonClick(PointerEventData eventData)
@@ -82,6 +100,10 @@ public class UI_LobbyScene : UI_SceneBase
 
         lobbyScene.characters[currentIndex].SetActive(true);
         lockTarget = lobbyScene.characters[currentIndex];
+
         characterNameText.text = statDict[lockTarget.name].ID;
+        strText.text = $"STR  " + statDict[lockTarget.name].STR.ToString();
+        agiText.text = $"AGI  " + statDict[lockTarget.name].AGI.ToString();
+        intText.text = $"INT  " + statDict[lockTarget.name].INT.ToString();
     }
 }

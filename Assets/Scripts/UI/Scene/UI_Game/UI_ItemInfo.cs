@@ -58,6 +58,12 @@ public class UI_ItemInfo : UI_SceneBase
         itemName.text = go.GetComponent<Item>().ItemStat.Id;
         itemStatList = go.GetComponent<Item>().ItemStat.MakeListToItemInfo();
 
+        // 먼저 이전에 열었던 아이템 정보를 초기화 하고
+        for (int i = 0; i < gridLayer.transform.childCount; i++)
+        {
+            gridLayer.transform.GetChild(i).GetComponent<Text>().text = " ";
+        }
+
         for (int i = 0; i < itemStatList.Count; i++)
         {
             if (i > gridLayer.transform.childCount) return;
@@ -94,5 +100,10 @@ public class UI_ItemInfo : UI_SceneBase
     {
         currentItem = null;
         gameObject.SetActive(false);
+
+        for (int i=0; i<gridLayer.transform.childCount; i++)
+        {
+            gridLayer.transform.GetChild(i).GetComponent<Text>().text = " ";
+        }
     }
 }

@@ -104,7 +104,7 @@ public class CharacterStat : CreatureStat
         INT = stat.INT;
         Exp = stat.EXP;
 
-        Gold = 100;
+        Gold = 1000;
         CurrentExp = 0;
     }
 
@@ -131,6 +131,10 @@ public class CharacterStat : CreatureStat
         Attack += itemStat.Attack;
         Defense += itemStat.Defense;
         MoveSpeed += itemStat.MoveSpeed;
+
+        AttackSpeed += itemStat.AttackSpeed;
+        Animator playerAnimator = Managers.Game.Player.GetComponent<PlayerController>().PlayerAnimator;
+        playerAnimator.SetFloat("AttackSpeed", AttackSpeed);
     }
 
     public void ItemUnEquipment(ItemStat itemStat)
@@ -139,5 +143,9 @@ public class CharacterStat : CreatureStat
         Attack -= itemStat.Attack;
         Defense -= itemStat.Defense;
         MoveSpeed -= itemStat.MoveSpeed;
+
+        AttackSpeed -= itemStat.AttackSpeed;
+        Animator playerAnimator = Managers.Game.Player.GetComponent<PlayerController>().PlayerAnimator;
+        playerAnimator.SetFloat("AttackSpeed", AttackSpeed);
     }
 }

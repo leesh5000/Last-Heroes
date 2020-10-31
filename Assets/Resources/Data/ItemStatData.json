@@ -7,16 +7,118 @@
             "HP": 0,
             "Attack": 30,
             "Defense": 0,
-            "MoveSpeed": 0
+            "MoveSpeed": 0,
+            "AttackSpeed": 0
+        },
+        {
+            "ID": "Rare Sword",
+            "Class": "Rare",
+            "Price": 50,
+            "HP": 0,
+            "Attack": 60,
+            "Defense": 0,
+            "MoveSpeed": 0,
+            "AttackSpeed": 0.5
+        },
+        {
+            "ID": "Unique Sword",
+            "Class": "Unique",
+            "Price": 100,
+            "HP": 0,
+            "Attack": 100,
+            "Defense": 0,
+            "MoveSpeed": 0,
+            "AttackSpeed": 1
+        },
+        {
+            "ID": "Legendary Sword",
+            "Class": "Legendary",
+            "Price": 200,
+            "HP": 0,
+            "Attack": 300,
+            "Defense": 0,
+            "MoveSpeed": 0,
+            "AttackSpeed": 2
+        },
+        {
+            "ID": "Tiny Boots",
+            "Class": "Normal",
+            "Price": 10,
+            "HP": 50,
+            "Attack": 0,
+            "Defense": 10,
+            "MoveSpeed": 0,
+            "AttackSpeed": 0
         },
         {
             "ID": "Rare Boots",
-            "Class": "Unique",
-            "Price": 20,
+            "Class": "Rare",
+            "Price": 50,
             "HP": 100,
             "Attack": 0,
+            "Defense": 20,
+            "MoveSpeed": 1,
+            "AttackSpeed": 0
+        },
+        {
+            "ID": "Unique Boots",
+            "Class": "Unique",
+            "Price": 100,
+            "HP": 200,
+            "Attack": 0,
+            "Defense": 50,
+            "MoveSpeed": 2,
+            "AttackSpeed": 0
+        },
+        {
+            "ID": "Legendary Boots",
+            "Class": "Legendary",
+            "Price": 200,
+            "HP": 500,
+            "Attack": 0,
+            "Defense": 70,
+            "MoveSpeed": 3.5,
+            "AttackSpeed": 0
+        },
+        {
+            "ID": "Tiny Armor",
+            "Class": "Normal",
+            "Price": 10,
+            "HP": 50,
+            "Attack": 0,
             "Defense": 10,
-            "MoveSpeed": 50
+            "MoveSpeed": 0,
+            "AttackSpeed": 0
+        },
+        {
+            "ID": "Rare Armor",
+            "Class": "Rare",
+            "Price": 50,
+            "HP": 100,
+            "Attack": 0,
+            "Defense": 20,
+            "MoveSpeed": 0,
+            "AttackSpeed": 0
+        },
+        {
+            "ID": "Unique Armor",
+            "Class": "Unique",
+            "Price": 100,
+            "HP": 200,
+            "Attack": 0,
+            "Defense": 50,
+            "MoveSpeed": 0,
+            "AttackSpeed": 0
+        },
+        {
+            "ID": "Legendary Armor",
+            "Class": "Legendary",
+            "Price": 200,
+            "HP": 500,
+            "Attack": 0,
+            "Defense": 100,
+            "MoveSpeed": 0,
+            "AttackSpeed": 0
         }
     ]
 }

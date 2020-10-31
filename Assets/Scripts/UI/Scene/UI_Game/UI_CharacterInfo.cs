@@ -125,8 +125,8 @@ public class UI_CharacterInfo : UI_SceneBase
 
         int attack = characterStat.Attack + characterStat.STR;
         int defense = characterStat.Defense + characterStat.AGI;
-        float attackSpeed = characterStat.AttackSpeed + (float)(characterStat.AGI * 0.01);
-        float moveSpeed = characterStat.MoveSpeed + (float)(characterStat.AGI * 0.01);
+        float attackSpeed = characterStat.AttackSpeed;
+        float moveSpeed = characterStat.MoveSpeed;
 
         atkText.text = attack.ToString();
         defText.text = defense.ToString();

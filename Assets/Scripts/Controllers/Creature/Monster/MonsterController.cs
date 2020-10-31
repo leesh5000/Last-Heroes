@@ -17,6 +17,10 @@ public class MonsterController : CreatureController
         // 몬스터 스텟 정보 가져오기
         Stat = gameObject.GetOrAddComponent<MonsterStat>();
 
+        // 몬스터 공속 설정
+        Animator monsterAnimator = GetComponent<Animator>();
+        monsterAnimator.SetFloat("AttackSpeed", Stat.AttackSpeed);
+
         // NavMeshAgent
         nma = Util.GetOrAddComponent<NavMeshAgent>(gameObject);
 

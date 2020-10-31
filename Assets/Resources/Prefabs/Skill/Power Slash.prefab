@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 5939055946316264989}
   - component: {fileID: 6203363087240046911}
   - component: {fileID: 7370292093375170370}
-  - component: {fileID: 1639619016275421264}
+  - component: {fileID: 7005642615537286932}
   m_Layer: 5
   m_Name: Power Slash
   m_TagString: Untagged
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1639619016275421264
+--- !u!114 &7005642615537286932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,6 +199,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8835054145255898366}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 753ecea5728b24032a9fe5a9255ef240, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e77b03989e9a4f8f997fb70cc8a3fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

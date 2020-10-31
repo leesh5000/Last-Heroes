@@ -19,6 +19,8 @@ public class ItemStat : MonoBehaviour
     public int _defense;
     [SerializeField]
     public float _moveSpeed;
+    [SerializeField]
+    public float _attackSpeed;
 
     public string Id { get { return _id; } set { _id = value; } }
     public string Class { get { return _class; } set { _class = value; } }
@@ -27,6 +29,7 @@ public class ItemStat : MonoBehaviour
     public int Attack { get { return _attack; } set { _attack = value; } }
     public int Defense { get { return _defense; } set { _defense = value; } }
     public float MoveSpeed { get { return _moveSpeed; } set { _moveSpeed = value; } }
+    public float AttackSpeed { get { return _attackSpeed; } set { _attackSpeed = value; } }
 
     public void Start()
     {
@@ -50,6 +53,7 @@ public class ItemStat : MonoBehaviour
         Attack = stat.Attack;
         Defense = stat.Defense;
         MoveSpeed = stat.MoveSpeed;
+        AttackSpeed = stat.AttackSpeed;
     }
 
     public List<string> MakeListToItemInfo()
@@ -63,6 +67,7 @@ public class ItemStat : MonoBehaviour
         if (Attack != 0) list.Add("+ Attack " + Attack.ToString());
         if (Defense != 0) list.Add("+ Defense " + Defense.ToString());
         if (MoveSpeed != 0) list.Add("+ Move Speed " + MoveSpeed.ToString());
+        if (AttackSpeed != 0) list.Add("+ Attack Speed " + AttackSpeed.ToString());
 
         return list;
     }
@@ -75,6 +80,7 @@ public class ItemStat : MonoBehaviour
         list.Add(Attack.ToString());
         list.Add(Defense.ToString());
         list.Add(MoveSpeed.ToString());
+        list.Add(AttackSpeed.ToString());
 
         return list;
     }

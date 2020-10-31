@@ -17,6 +17,7 @@ namespace ContentsData
         public int Attack;
         public int Defense;
         public float MoveSpeed;
+        public float AttackSpeed;
     }
 
     [Serializable]
@@ -52,60 +53,6 @@ namespace ContentsData
         public int Defense;
         public int EXP;
         public int Gold;
-    }
-
-    [Serializable]
-    public class CharacterSkill
-    {
-        public string ID;
-        public string Skill0;
-        public string Skill1;
-        public string Skill2;
-        public string Skill3;
-        public string Skill4;
-        public string Skill5;
-    }
-
-    [Serializable]
-    public class SkillStat
-    {
-        public string ID;
-        public string Require;
-        public string Type;
-        public int Cost;
-        public string Message;
-    }
-
-    [Serializable]
-    public class CharacterSkillData : ILoader<string, CharacterSkill>
-    {
-        public List<CharacterSkill> skills = new List<CharacterSkill>();
-
-        public Dictionary<string, CharacterSkill> ConvertDict()
-        {
-            Dictionary<string, CharacterSkill> dict = new Dictionary<string, CharacterSkill>();
-
-            foreach (CharacterSkill skill in skills)
-                dict.Add(skill.ID, skill);
-
-            return dict;
-        }
-    }
-
-    [Serializable]
-    public class SkillStatData : ILoader<string, SkillStat>
-    {
-        public List<SkillStat> stats = new List<SkillStat>();
-
-        public Dictionary<string, SkillStat> ConvertDict()
-        {
-            Dictionary<string, SkillStat> dict = new Dictionary<string, SkillStat>();
-
-            foreach (SkillStat stat in stats)
-                dict.Add(stat.ID, stat);
-
-            return dict;
-        }
     }
 
     [Serializable]

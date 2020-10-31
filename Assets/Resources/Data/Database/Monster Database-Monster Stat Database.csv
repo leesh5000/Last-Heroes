@@ -1,3 +1,6 @@
 ID,HP,AttackRange,AttackSpeed,MoveSpeed,Attack,Defense,EXP,Gold,,,,,,
 Slime,100,1.5,1.0,5.0,10,0,5,10,,,,,,
-TurtleShell,200,2.0,1.5,6.0,15,5,15,20,,,,,,
+TurtleShell,200,2.0,1.25,6.0,15,5,15,20,,,,,,
+Chest,400,2.0,1.5,5.0,30,15,20,30,,,,,,
+Beholder,700,5.0,2.0,5.0,70,20,40,60,,,,,,
+BlackKnight,1000,1.5,2.5,3.0,100,50,100,100,,,,,,

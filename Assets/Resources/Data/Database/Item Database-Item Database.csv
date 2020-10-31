@@ -1,3 +1,13 @@
-ID,Class,Price,HP,Attack,Defense,MoveSpeed
-Tiny Sword,Normal,10,0,30,0,0
-Rare Boots,Unique,20,100,0,10,50
+ID,Class,Price,HP,Attack,Defense,MoveSpeed,AttackSpeed
+Tiny Sword,Normal,10,0,30,0,0.0,0.0
+Rare Sword,Rare,50,0,60,0,0.0,0.5
+Unique Sword,Unique,100,0,100,0,0.0,1.0
+Legendary Sword,Legendary,200,0,300,0,0.0,2.0
+Tiny Boots,Normal,10,50,0,10,0.0,0.0
+Rare Boots,Rare,50,100,0,20,1.0,0.0
+Unique Boots,Unique,100,200,0,50,2.0,0.0
+Legendary Boots,Legendary,200,500,0,70,3.5,0.0
+Tiny Armor,Normal,10,50,0,10,0.0,0.0
+Rare Armor,Rare,50,100,0,20,0.0,0.0
+Unique Armor,Unique,100,200,0,50,0.0,0.0
+Legendary Armor,Legendary,200,500,0,100,0.0,0.0

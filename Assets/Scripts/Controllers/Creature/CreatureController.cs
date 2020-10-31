@@ -61,13 +61,7 @@ public abstract class CreatureController : MonoBehaviour
 
     void Update()
     {
-        //if (gameObject.layer == (int)Define.Layer.Monster)
-        //{
-        //    Debug.Log($"Name & State :: {gameObject.name} & {State}");
-        //    if (LockTarget != null)
-        //        Debug.Log($"LockTarget :: {LockTarget.name}");
-        //}
-
+        
         switch (State)
         {
             case Define.State.Idle:

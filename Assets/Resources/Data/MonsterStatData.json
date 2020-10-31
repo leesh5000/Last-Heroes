@@ -15,12 +15,45 @@
             "ID": "TurtleShell",
             "HP": 200,
             "AttackRange": 2,
-            "AttackSpeed": 1.5,
+            "AttackSpeed": 1.25,
             "MoveSpeed": 6,
             "Attack": 15,
             "Defense": 5,
             "EXP": 15,
             "Gold": 20
+        },
+        {
+            "ID": "Chest",
+            "HP": 400,
+            "AttackRange": 2,
+            "AttackSpeed": 1.5,
+            "MoveSpeed": 5,
+            "Attack": 30,
+            "Defense": 15,
+            "EXP": 20,
+            "Gold": 30
+        },
+        {
+            "ID": "Beholder",
+            "HP": 700,
+            "AttackRange": 5,
+            "AttackSpeed": 2,
+            "MoveSpeed": 5,
+            "Attack": 70,
+            "Defense": 20,
+            "EXP": 40,
+            "Gold": 60
+        },
+        {
+            "ID": "BlackKnight",
+            "HP": 1000,
+            "AttackRange": 1.5,
+            "AttackSpeed": 2.5,
+            "MoveSpeed": 3,
+            "Attack": 100,
+            "Defense": 50,
+            "EXP": 100,
+            "Gold": 100
         }
     ]
 }

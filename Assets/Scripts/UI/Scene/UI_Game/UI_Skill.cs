@@ -36,9 +36,5 @@ public class UI_Skill : UI_SceneBase
         SkillSlot4 = Get<Transform>((int)Transforms.SkillSlot4);
         SkillSlot5 = Get<Transform>((int)Transforms.SkillSlot5);
 
-        CharacterSkill skills = Managers.Game.Player.GetComponent<PlayerController>().Skill;
-        GameObject skill0 = Managers.Resource.Instantiate($"Prefabs/Skill/{skills.Skill0}");
-        skill0.transform.SetParent(SkillSlot0);
-        skill0.transform.localPosition = Vector2.zero;
     }
 }
