@@ -34,6 +34,8 @@ public class UI_ShopDialog : UI_PopupBase
                     Managers.UI.UI_Inven.SetActive(true);
                 }
             }
+
+            gameObject.SetActive(false);
         }
     }
 }

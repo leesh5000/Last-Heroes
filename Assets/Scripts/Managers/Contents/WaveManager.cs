@@ -24,7 +24,7 @@ public class WaveManager : MonoBehaviour
         //currentMonsterCount = Managers.Game.MonsterCount;
 
         currentWave = 1;
-        remainingTime = 5.0f;
+        remainingTime = 20.0f;
     }
 
     void Update()
@@ -38,7 +38,7 @@ public class WaveManager : MonoBehaviour
 
             if (remainingTime < 0)
             {
-                remainingTime = 5.0f;
+                remainingTime = 20.0f;
                 MonsterSpawn();
             }
         }
@@ -48,13 +48,15 @@ public class WaveManager : MonoBehaviour
     {
         if (currentWave > MonsterWaves.Length) { return; }
 
-        reservedMonsterCount = 3;
+        reservedMonsterCount = 10;
 
         while (reservedMonsterCount > 0)
         {
-
-            Managers.Game.Spawn(Define.WorldObject.Monster, $"Prefabs/Monster/{MonsterWaves[currentWave - 1].name}", transform);
+            Managers.Game.Spawn(Define.WorldObject.Monster, $"Prefabs/Monster/{MonsterWaves[2].name}", transform);
             reservedMonsterCount--;
+
+            //Managers.Game.Spawn(Define.WorldObject.Monster, $"Prefabs/Monster/{MonsterWaves[currentWave - 1].name}", transform);
+            //reservedMonsterCount--;
         }
 
         currentWave++;

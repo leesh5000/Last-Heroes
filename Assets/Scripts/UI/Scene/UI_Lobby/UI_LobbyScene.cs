@@ -18,12 +18,14 @@ public class UI_LobbyScene : UI_SceneBase
     enum Texts
     {
         CharacterNameText,
+        HPText,
         STRText,
         AGIText,
         INTText,
     }
 
     Text characterNameText;
+    Text hpText;
     Text strText;
     Text agiText;
     Text intText;
@@ -48,6 +50,7 @@ public class UI_LobbyScene : UI_SceneBase
 
         Bind<Text>(typeof(Texts));
         characterNameText = Get<Text>((int)Texts.CharacterNameText);
+        hpText = Get<Text>((int)Texts.HPText);
         strText = Get<Text>((int)Texts.STRText);
         agiText = Get<Text>((int)Texts.AGIText);
         intText = Get<Text>((int)Texts.INTText);
@@ -60,6 +63,7 @@ public class UI_LobbyScene : UI_SceneBase
         lockTarget = lobbyScene.characters[currentIndex];
 
         characterNameText.text = statDict[lockTarget.name].ID;
+        hpText.text = $"HP  " + statDict[lockTarget.name].HP.ToString();
         strText.text = $"STR  "+  statDict[lockTarget.name].STR.ToString();
         agiText.text = $"AGI  " + statDict[lockTarget.name].AGI.ToString();
         intText.text = $"INT  " + statDict[lockTarget.name].INT.ToString();
@@ -86,6 +90,7 @@ public class UI_LobbyScene : UI_SceneBase
         lockTarget = lobbyScene.characters[currentIndex];
 
         characterNameText.text = statDict[lockTarget.name].ID;
+        hpText.text = $"HP  " + statDict[lockTarget.name].HP.ToString();
         strText.text = $"STR  " + statDict[lockTarget.name].STR.ToString();
         agiText.text = $"AGI  " + statDict[lockTarget.name].AGI.ToString();
         intText.text = $"INT  " + statDict[lockTarget.name].INT.ToString();
@@ -102,6 +107,7 @@ public class UI_LobbyScene : UI_SceneBase
         lockTarget = lobbyScene.characters[currentIndex];
 
         characterNameText.text = statDict[lockTarget.name].ID;
+        hpText.text = $"HP  " + statDict[lockTarget.name].HP.ToString();
         strText.text = $"STR  " + statDict[lockTarget.name].STR.ToString();
         agiText.text = $"AGI  " + statDict[lockTarget.name].AGI.ToString();
         intText.text = $"INT  " + statDict[lockTarget.name].INT.ToString();

@@ -83,7 +83,8 @@ public class UI_CharacterInfo : UI_SceneBase
         characterNameText.text = characterStat.Id;
 
         Text characterSubNameText = Get<Text>((int)Texts.CharacterSubNameText);
-        characterSubNameText.text = $"Lv{characterStat.Level}  " + characterStat.SubName;
+        //characterSubNameText.text = $"Lv{characterStat.Level}  " + characterStat.SubName;
+        characterSubNameText.text = $"Lv{characterStat.Level}";
 
         hpText = Get<Text>((int)Texts.HPText);
         mpText = Get<Text>((int)Texts.MPText);

@@ -6,16 +6,16 @@
             "Description": "Before Great War, as the Emperor of the Empire, he lost everything after the war. Help him find the glory!",
             "AttackRange": 1.5,
             "AttackSpeed": 1,
-            "MoveSpeed": 15,
+            "MoveSpeed": 9.0,
             "STR": 30,
             "AGI": 20,
             "INT": 10,
             "Level": 1,
             "EXP": 100,
-            "HP": 100,
+            "HP": 400,
             "MP": 50,
-            "Attack": 30,
-            "Defense": 0
+            "Attack": 10,
+            "Defense": 10
         },
         {
             "ID": "Pirate",

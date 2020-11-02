@@ -41,7 +41,8 @@ public class CharacterStat : CreatureStat
                     case "Knight":
                         {
                             CurrentExp = 0;
-                            _exp *= 2;
+                            Level += 1;
+                            Exp *= 2;
                         }
                         break;
 
