@@ -5,6 +5,7 @@ using UnityEngine;
 // Version 1
 public class MainCameraController : MonoBehaviour
 {
+    // 카메라 위치의 offset
     [SerializeField]
     Vector3 _offset = new Vector3(-9.0f, 9.0f, -9.0f);
 
@@ -28,6 +29,7 @@ public class MainCameraController : MonoBehaviour
             return;
         }
 
+        // 플레이어 -> 카메라 위치로 레이캐스팅해서 플레이어를 가리는 물체가 있는지 확인
         RaycastHit[] hits;
         hits = Physics.RaycastAll(Managers.Game.Player.transform.position + Vector3.up * 0.75f, _offset.normalized, _offset.magnitude, _cameraMask);
 
