@@ -1,5 +1,7 @@
 ### Game Client Programming
 
+> [영상 링크](https://www.youtube.com/watch?v=8ug1vFNf_KM)
+
 <br>
 >  플레이어를 가리는 물체가 있을 때, 그 물체를 흐려지게 만들기
 <br>
